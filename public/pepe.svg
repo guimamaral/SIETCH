@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="frogGradient" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </radialGradient>
+  </defs>
+  <circle cx="128" cy="128" r="120" fill="url(#frogGradient)"/>
+  <ellipse cx="88" cy="96" rx="36" ry="30" fill="#ecfeff"/>
+  <ellipse cx="168" cy="96" rx="36" ry="30" fill="#ecfeff"/>
+  <circle cx="88" cy="100" r="12" fill="#0f172a"/>
+  <circle cx="168" cy="100" r="12" fill="#0f172a"/>
+  <path d="M76 156C100 188 156 188 180 156" stroke="#0f172a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 112C44 68 84 40 124 48" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M204 112C212 68 172 40 132 48" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+</svg>
