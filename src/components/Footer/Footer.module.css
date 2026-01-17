@@ -51,6 +51,13 @@
   font-size: var(--font-size-xs);
 }
 
+.copyright {
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
 /* Mobile adjustments */
 @media (max-width: 640px) {
   .hints {

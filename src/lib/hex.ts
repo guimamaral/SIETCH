@@ -4,7 +4,7 @@
 
 /**
  * Convert a number to hex string with 0x prefix
- * Always uppercase, zero-padded to 2 digits minimum
+ * Zero-padded to 2 digits
  */
 export function toHex(n: number): string {
   return `0x${n.toString(16).toUpperCase().padStart(2, '0')}`;
@@ -28,8 +28,8 @@ export function fromHex(str: string): number | null {
 }
 
 /**
- * Format page indicator: "0x03 / 0x08"
+ * Format page indicator: "0x03"
  */
 export function formatPageIndicator(current: number, total: number): string {
-  return `${toHex(current)} / ${toHex(total)}`;
+  return toHex(current);
 }

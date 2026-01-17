@@ -38,6 +38,10 @@ export function Footer() {
           LINKEDIN
         </a>
       </div>
+
+      <div className={styles.copyright}>
+        © {new Date().getFullYear()} GUILHERME AMARAL
+      </div>
     </footer>
   );
 }
