@@ -16,6 +16,27 @@
   min-height: 50vh;
 }
 
+.siteTitle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+}
+
+.siteName {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-fg-muted);
+}
+
+.siteDefinition {
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  font-style: italic;
+}
+
 .heroName {
   font-size: var(--font-size-hero);
   font-weight: 400;
