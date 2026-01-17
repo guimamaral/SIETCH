@@ -1,0 +1,26 @@
+.header {
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+.pageIndicator {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.hexIndex {
+  color: var(--color-fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.separator {
+  color: var(--color-fg-subtle);
+}
+
+.pageTitle {
+  color: var(--color-fg);
+  font-weight: 600;
+}

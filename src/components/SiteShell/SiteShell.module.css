@@ -1,0 +1,16 @@
+.shell {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  padding: 0 var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
