@@ -334,6 +334,15 @@
   padding-bottom: 0;
 }
 
+.testimonialKeywords {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-fg);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
 .testimonialRating {
   font-size: var(--font-size-sm);
   color: var(--color-fg-muted);
@@ -349,11 +358,31 @@
   margin-bottom: var(--space-2);
 }
 
+.testimonialFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .testimonialName {
   font-size: var(--font-size-xs);
   color: var(--color-fg-subtle);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
+}
+
+.testimonialSessions {
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ─── Divider ─── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-8) 0;
 }
 
 /* ─── Tutoring CTA ─── */
