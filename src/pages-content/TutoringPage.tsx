@@ -159,8 +159,9 @@ export function TutoringPage() {
           <li>IB Computer Science</li>
           <li>Introductory Programming (Python, Java, C/C++)</li>
           <li>Data Structures & Algorithms (Python, Java, C/C++)</li>
-          <li>Systems Programming (C/C++)</li>
-          <li>Operating Systems (C/C++)</li>
+          <li>Systems Programming (ARM, RISC-V, x86, C/C++)</li>
+          <li>Operating Systems (ARM, RISC-V, x86, C/C++)</li>
+          <li>Computer Security (ARM, RISC-V, x86, C/C++)</li>
         </ul>
       </div>
 

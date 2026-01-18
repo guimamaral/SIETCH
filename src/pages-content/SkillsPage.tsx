@@ -12,8 +12,9 @@ const skillCategories: SkillCategory[] = [
   {
     name: 'Languages',
     skills: [
-            'AArch64', 
-            'RISC-V', 
+            'ARM', 
+            'RISC-V',
+            'x86',
             'C/C++', 
             'Java', 
             'Python', 
