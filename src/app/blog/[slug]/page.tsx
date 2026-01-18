@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import DOMPurify from 'isomorphic-dompurify';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog';
 import styles from './page.module.css';
 
@@ -76,7 +77,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div
             className={styles.content}
-            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(post.contentHtml, {
+                ALLOWED_TAGS: [
+                  'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+                  'p', 'br', 'hr',
+                  'ul', 'ol', 'li',
+                  'strong', 'em', 'b', 'i', 'u', 's', 'code', 'pre',
+                  'blockquote', 'a', 'img',
+                  'table', 'thead', 'tbody', 'tr', 'th', 'td',
+                ],
+                ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class'],
+              })
+            }}
           />
         </article>
 
