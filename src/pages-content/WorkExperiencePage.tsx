@@ -12,32 +12,34 @@ interface WorkEntry {
 const workExperience: WorkEntry[] = [
   // TODO: Replace with your work experience
   {
-    role: 'Senior Software Engineer',
-    company: 'Example Corp',
-    dates: 'Jan 2022 – Present',
+    role: 'Private Tutor',
+    company: 'NVIDIA Corporation',
+    dates: 'May 2025 – August 2025',
     bullets: [
-      'Led security architecture for cloud-native platform serving 10M+ users',
-      'Implemented zero-trust networking reducing attack surface by 60%',
-      'Mentored team of 5 engineers on secure development practices',
+      'FILL HERE'
     ],
   },
   {
-    role: 'Software Engineer',
-    company: 'Startup Inc',
-    dates: 'Jun 2019 – Dec 2021',
+    role: 'System Software Engieer',
+    company: 'NVIDIA Corporation',
+    dates: 'May 2025 – August 2025',
     bullets: [
-      'Built authentication microservice handling 1M+ daily requests',
-      'Designed and implemented end-to-end encryption for messaging feature',
-      'Reduced API response time by 40% through query optimization',
+      'FILL HERE'
     ],
   },
   {
-    role: 'Security Intern',
-    company: 'Big Tech Co',
-    dates: 'May 2018 – Aug 2018',
+    role: 'Systems Software Engineer',
+    company: 'NVIDIA Corporation',
+    dates: 'May 2024 – August 2024',
     bullets: [
-      'Conducted security audits on internal tooling',
-      'Developed automated vulnerability scanning pipeline',
+      'FILL HERE'
+    ],
+  },
+  {
+    role: 'Software Engineer Intern',
+    company: 'Futurehouse.ai',
+    dates: 'September 2023 – Dec 2023',
+    bullets: [
     ],
   },
 ];
@@ -46,8 +48,8 @@ export function WorkExperiencePage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
-        <span className={styles.siteName}>SIETCH</span>
-        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+        <span className={styles.siteName}>GOM JABBAR</span>
+        <span className={styles.siteDefinition}>a poisoned needle used by the Bene Gesserit to test if someone possesses the human ability to overcome instinct and fear</span>
       </div>
       <h2 className={styles.sectionTitle}>WORK EXPERIENCE</h2>
 
@@ -70,8 +72,8 @@ export function WorkExperiencePage() {
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
-        <span className={styles.quoteAttribution}>— Author</span>
+        <span className={styles.quoteText}>&quot;Highly organized research is guaranteed to produce nothing new.&quot;</span>
+        <span className={styles.quoteAttribution}>— Frank Herbert</span>
       </div>
     </section>
   );

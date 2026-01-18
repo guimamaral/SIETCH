@@ -6,8 +6,8 @@ export function PurposePage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
-        <span className={styles.siteName}>SIETCH</span>
-        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+        <span className={styles.siteName}>Lisan al-Gaib</span>
+        <span className={styles.siteDefinition}>the Fremen term for their offworld prophet or messiah</span>
       </div>
       <h2 className={styles.sectionTitle}>PURPOSE</h2>
 
@@ -35,14 +35,14 @@ export function PurposePage() {
         <h3 className={styles.subsectionTitle}>Now</h3>
         <p className={styles.paragraph}>
           {/* TODO: Replace with what you're focused on this month */}
-          Currently focused on building a monolithic kernel 
+          Currently focused on building a monolithic kernel using Rust/C++ 
           for the AArch64 architecture targeted at a Raspberry Pi 4b.
         </p>
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
-        <span className={styles.quoteAttribution}>— Author</span>
+        <span className={styles.quoteText}>&quot;The mystery of life isn't a problem to solve, but a reality to experience.&quot;</span>
+        <span className={styles.quoteAttribution}>— Frank Herbert</span>
       </div>
     </section>
   );
