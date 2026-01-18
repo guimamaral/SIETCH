@@ -37,6 +37,29 @@
   font-style: italic;
 }
 
+/* ─── Quote Section ─── */
+.quoteSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.quoteText {
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  font-style: italic;
+}
+
+.quoteAttribution {
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
 .heroName {
   font-size: var(--font-size-hero);
   font-weight: 400;

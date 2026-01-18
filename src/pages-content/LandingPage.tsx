@@ -23,6 +23,11 @@ export function LandingPage() {
       <p className={styles.heroHint}>
         Use arrow keys to navigate
       </p>
+
+      <div className={styles.quoteSection}>
+        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
+        <span className={styles.quoteAttribution}>— Author</span>
+      </div>
     </section>
   );
 }

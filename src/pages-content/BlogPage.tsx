@@ -20,6 +20,10 @@ function formatDate(dateString: string): string {
 export function BlogPage({ posts = [] }: BlogPageProps) {
   return (
     <section className={styles.page}>
+      <div className={styles.siteTitle}>
+        <span className={styles.siteName}>SIETCH</span>
+        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+      </div>
       <h2 className={styles.sectionTitle}>BLOG</h2>
 
       {posts.length === 0 ? (
@@ -39,6 +43,11 @@ export function BlogPage({ posts = [] }: BlogPageProps) {
           ))}
         </ul>
       )}
+
+      <div className={styles.quoteSection}>
+        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
+        <span className={styles.quoteAttribution}>— Author</span>
+      </div>
     </section>
   );
 }

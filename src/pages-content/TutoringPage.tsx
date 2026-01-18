@@ -5,6 +5,10 @@ import styles from './pages.module.css';
 export function TutoringPage() {
   return (
     <section className={styles.page}>
+      <div className={styles.siteTitle}>
+        <span className={styles.siteName}>SIETCH</span>
+        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+      </div>
       <h2 className={styles.sectionTitle}>TUTORING</h2>
 
       <div className={styles.subsection}>
@@ -50,6 +54,11 @@ export function TutoringPage() {
           {/* TODO: Update email */}
           Get in Touch →
         </a>
+      </div>
+
+      <div className={styles.quoteSection}>
+        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
+        <span className={styles.quoteAttribution}>— Author</span>
       </div>
     </section>
   );
