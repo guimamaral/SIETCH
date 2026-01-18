@@ -4,8 +4,8 @@
 
 export const SITE_CONFIG = {
   name: 'Your Name',
-  title: 'Your Name — Personal Site',
-  description: 'A minimalist personal website with keyboard navigation.',
+  title: 'SIETCH - Guilherme Amaral',
+  description: 'Guilherme Amaral\'s Sietch',
   subtitle: 'Software Engineer • Security • Systems',
 
   // Social links - update these with your actual links
