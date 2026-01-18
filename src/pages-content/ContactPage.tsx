@@ -14,7 +14,7 @@ export function ContactPage() {
       <div className={styles.contactContent}>
         <p className={styles.paragraph}>
           {/* TODO: Replace with your contact message */}
-          The best way to reach me is via email. I typically respond within 24-48 hours.
+          The best way to reach me is via email. I typically respond within 24 - 48 hours.
         </p>
 
         <div className={styles.contactLinks}>
@@ -23,12 +23,12 @@ export function ContactPage() {
             className={styles.contactLink}
           >
             {/* TODO: Update email */}
-            your.email@example.com
+            guim.amaral2004@gmail.com
           </a>
 
           <div className={styles.socialLinks}>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/guimamaral"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -38,7 +38,7 @@ export function ContactPage() {
             </a>
             <span className={styles.separator}>•</span>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/guimamaral"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
