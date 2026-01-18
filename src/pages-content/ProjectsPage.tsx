@@ -13,28 +13,11 @@ interface Project {
 const projects: Project[] = [
   // TODO: Replace with your projects
   {
-    name: 'SecureVault',
+    name: 'gheithOS',
     link: 'https://github.com/yourusername/securevault',
-    description: 'End-to-end encrypted password manager with zero-knowledge architecture.',
-    tags: ['Rust', 'Cryptography', 'WebAssembly'],
-    highlights: ['Featured on Hacker News', '500+ GitHub stars'],
-  },
-  {
-    name: 'NetGuard',
-    link: 'https://github.com/yourusername/netguard',
-    description: 'Network intrusion detection system using machine learning.',
-    tags: ['Python', 'TensorFlow', 'Network Security'],
-  },
-  {
-    name: 'AuthKit',
-    description: 'Open-source authentication library with OAuth2 and OIDC support.',
-    tags: ['TypeScript', 'Node.js', 'OAuth'],
-    highlights: ['Used by 50+ companies'],
-  },
-  {
-    name: 'CryptoChat',
-    description: 'Decentralized messaging app with perfect forward secrecy.',
-    tags: ['Go', 'libp2p', 'Signal Protocol'],
+    description: 'a monolithic kernel for the AArch64 architecture targeted at a Raspberry Pi 4b',
+    tags: ['Rust', 'C++', 'AArch64'],
+    highlights: ['cool features'],
   },
 ];
 
@@ -42,8 +25,8 @@ export function ProjectsPage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
-        <span className={styles.siteName}>SIETCH</span>
-        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+        <span className={styles.siteName}>BUTLERIAN JIHAD</span>
+        <span className={styles.siteDefinition}>the crusade against computers, thinking machines, and conscious robots</span>
       </div>
       <h2 className={styles.sectionTitle}>PROJECTS</h2>
 
@@ -79,8 +62,8 @@ export function ProjectsPage() {
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
-        <span className={styles.quoteAttribution}>— Author</span>
+        <span className={styles.quoteText}>&quot;The people who can destroy a thing, they control it.&quot;</span>
+        <span className={styles.quoteAttribution}>— Paul Atreides</span>
       </div>
     </section>
   );

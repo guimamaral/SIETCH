@@ -84,7 +84,7 @@ export function WorkExperiencePage() {
 
       <div className={styles.quoteSection}>
         <span className={styles.quoteText}>&quot;Highly organized research is guaranteed to produce nothing new.&quot;</span>
-        <span className={styles.quoteAttribution}>— Frank Herbert</span>
+        <span className={styles.quoteAttribution}>— Pardot Kynes</span>
       </div>
     </section>
   );

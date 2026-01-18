@@ -11,25 +11,26 @@ const skillCategories: SkillCategory[] = [
   // TODO: Replace with your skills
   {
     name: 'Languages',
-    skills: ['Rust', 'Go', 'Python', 'TypeScript', 'C/C++', 'Bash'],
+    skills: [
+            'AArch64', 
+            'RISC-V', 
+            'C/C++', 
+            'Java', 
+            'Python', 
+            'Lisp (Clojure, Simply Scheme)'
+          ],
   },
   {
     name: 'Systems / Infra',
-    skills: ['Linux', 'Docker', 'Kubernetes', 'AWS', 'Terraform', 'Nginx'],
-  },
-  {
-    name: 'Security',
     skills: [
-      'Penetration Testing',
-      'Cryptography',
-      'Network Security',
-      'Incident Response',
-      'Threat Modeling',
-    ],
+            'Unix / Linux', 
+            'Docker', 
+            'EC2'
+          ],
   },
   {
     name: 'Tools',
-    skills: ['Git', 'Wireshark', 'Burp Suite', 'Ghidra', 'Nmap', 'Metasploit'],
+    skills: ['Git', 'Make', 'Valgrind', 'Jira', 'Splunk', 'Gerrit', 'Coverity', 'Jenkins'],
   },
 ];
 
@@ -37,8 +38,9 @@ export function SkillsPage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
-        <span className={styles.siteName}>SIETCH</span>
-        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+        <span className={styles.siteName}>THINKING MACHINES</span>
+        <span className={styles.siteDefinition}>the artificial intelligence on which humanity came to depend and, 
+                                                indeed, become subject to prior to the Butlerian Jihad</span>
       </div>
       <h2 className={styles.sectionTitle}>SKILLS</h2>
 
@@ -58,8 +60,8 @@ export function SkillsPage() {
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
-        <span className={styles.quoteAttribution}>— Author</span>
+        <span className={styles.quoteText}>&quot;Arrakis teaches the attitude of the knife - chopping off what's incomplete and saying: Now, it's complete because it's ended here.&quot;</span>
+        <span className={styles.quoteAttribution}>— Paul Atreides</span>
       </div>
     </section>
   );

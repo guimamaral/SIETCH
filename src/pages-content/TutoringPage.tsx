@@ -6,8 +6,8 @@ export function TutoringPage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
-        <span className={styles.siteName}>SIETCH</span>
-        <span className={styles.siteDefinition}>the Fremen term for a community or village</span>
+        <span className={styles.siteName}>SHAI-HULUD</span>
+        <span className={styles.siteDefinition}>the Fremen term for the sandworm of Arrakis</span>
       </div>
       <h2 className={styles.sectionTitle}>TUTORING</h2>
 
@@ -15,10 +15,13 @@ export function TutoringPage() {
         <h3 className={styles.subsectionTitle}>What I Teach</h3>
         <ul className={styles.list}>
           {/* TODO: Replace with your tutoring topics */}
-          <li>Computer Science fundamentals (Data Structures, Algorithms)</li>
-          <li>Systems Programming (C, Rust, Operating Systems)</li>
-          <li>Security concepts and practices</li>
-          <li>Technical interview preparation (FAANG-style)</li>
+          <li>AP Computer Science A (Java)</li>
+          <li>AP Computer Science Principles</li>
+          <li>IB Computer Science</li>
+          <li>Introductory Programming (Python, Java, C/C++)</li>
+          <li>Data Structures & Algorithms</li>
+          <li>Systems Programming (C/C++)</li>
+          <li>Operating Systems (C/C++)</li>
         </ul>
       </div>
 
@@ -26,8 +29,8 @@ export function TutoringPage() {
         <h3 className={styles.subsectionTitle}>Who It&apos;s For</h3>
         <ul className={styles.list}>
           {/* TODO: Replace with your target audience */}
-          <li>University students (CS majors, all levels)</li>
-          <li>Career changers entering tech</li>
+          <li>High-School students</li>
+          <li>University students</li>
           <li>Engineers preparing for technical interviews</li>
           <li>Self-taught developers looking to solidify fundamentals</li>
         </ul>
@@ -37,9 +40,9 @@ export function TutoringPage() {
         <h3 className={styles.subsectionTitle}>Track Record</h3>
         <ul className={styles.list}>
           {/* TODO: Replace with your metrics */}
-          <li>200+ hours of 1-on-1 tutoring</li>
-          <li>15+ students placed at top tech companies</li>
-          <li>4.9/5.0 average rating</li>
+          <li>1,000+ hours tutored (660+ on Wyzant)</li>
+          <li>60+ students</li>
+          <li>5.0 Star Rating</li>
         </ul>
       </div>
 
@@ -57,8 +60,9 @@ export function TutoringPage() {
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;Quote goes here.&quot;</span>
-        <span className={styles.quoteAttribution}>— Author</span>
+        <span className={styles.quoteText}>&quot;Proper teaching is recognized with ease. 
+                                                You can know it without fail because it awakens within you that sensation which tells you this is something you have always known.&quot;</span>
+        <span className={styles.quoteAttribution}>— Frank Herbert</span>
       </div>
     </section>
   );

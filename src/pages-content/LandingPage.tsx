@@ -31,7 +31,7 @@ export function LandingPage() {
             And when it has gone past I will turn the inner eye to see its path. 
             Where the fear has gone there will be nothing. 
             Only I will remain.&quot;</span>
-        <span className={styles.quoteAttribution}>— Frank Herbert</span>
+        <span className={styles.quoteAttribution}>— Paul Atreides</span>
       </div>
     </section>
   );

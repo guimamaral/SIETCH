@@ -157,6 +157,7 @@
 
 .entry:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .entryHeader {
