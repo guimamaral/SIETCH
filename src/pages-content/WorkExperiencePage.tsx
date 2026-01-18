@@ -12,7 +12,7 @@ interface WorkEntry {
 const workExperience: WorkEntry[] = [
   // TODO: Replace with your work experience
   {
-    role: 'System Software Engieer',
+    role: 'Systems Software Engieer',
     company: 'NVIDIA Corporation',
     dates: 'July 2026',
     bullets: [
@@ -30,7 +30,7 @@ const workExperience: WorkEntry[] = [
     ],
   },
   {
-    role: 'System Software Engieer Intern',
+    role: 'Systems Software Engieer Intern',
     company: 'NVIDIA Corporation',
     dates: 'May 2025 – August 2025',
     bullets: [
