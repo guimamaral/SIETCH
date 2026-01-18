@@ -12,34 +12,45 @@ interface WorkEntry {
 const workExperience: WorkEntry[] = [
   // TODO: Replace with your work experience
   {
-    role: 'Private Tutor',
-    company: 'NVIDIA Corporation',
-    dates: 'May 2025 – August 2025',
-    bullets: [
-      'FILL HERE'
-    ],
-  },
-  {
     role: 'System Software Engieer',
     company: 'NVIDIA Corporation',
-    dates: 'May 2025 – August 2025',
+    dates: 'July 2026',
     bullets: [
-      'FILL HERE'
+      'Incoming :)',
+      'RTOS & Hypervisor for Autonomous Vehicles'
+    ],
+  },
+  
+  {
+    role: 'Private Tutor',
+    company: 'N/A',
+    dates: 'April 2023 – Present',
+    bullets: [
+      'https://www.wyzant.com/Tutors/CSHelpByGui'
     ],
   },
   {
-    role: 'Systems Software Engineer',
+    role: 'System Software Engieer Intern',
+    company: 'NVIDIA Corporation',
+    dates: 'May 2025 – August 2025',
+    bullets: [
+      'RTOS & Hypervisor for Autonomous Vehicles'
+    ],
+  },
+  {
+    role: 'Systems Software Engineer Intern',
     company: 'NVIDIA Corporation',
     dates: 'May 2024 – August 2024',
     bullets: [
-      'FILL HERE'
+      'RTOS & Hypervisor for Autonomous Vehicles',
     ],
   },
   {
     role: 'Software Engineer Intern',
     company: 'Futurehouse.ai',
-    dates: 'September 2023 – Dec 2023',
+    dates: 'September 2023 – December 2023',
     bullets: [
+      'AI-powered Sales & Lead Generation'
     ],
   },
 ];

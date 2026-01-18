@@ -25,13 +25,12 @@ export function LandingPage() {
       </p>
   
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;
-            “I must not fear. Fear is the mind-killer. 
+        <span className={styles.quoteText}>&quot;I must not fear. Fear is the mind-killer. 
             Fear is the little-death that brings total obliteration. 
             I will face my fear. I will permit it to pass over me and through me. 
             And when it has gone past I will turn the inner eye to see its path. 
             Where the fear has gone there will be nothing. 
-            Only I will remain.” .&quot;</span>
+            Only I will remain.&quot;</span>
         <span className={styles.quoteAttribution}>— Frank Herbert</span>
       </div>
     </section>
