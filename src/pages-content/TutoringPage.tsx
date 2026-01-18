@@ -2,6 +2,21 @@
 
 import styles from './pages.module.css';
 
+interface Testimonial {
+  review: string;
+  rating: number;
+  name: string;
+}
+
+const testimonials: Testimonial[] = [
+  // TODO: Add your testimonials
+  {
+    review: 'Example testimonial goes here. This student had a great experience learning with you.',
+    rating: 5,
+    name: 'Student Name',
+  },
+];
+
 export function TutoringPage() {
   return (
     <section className={styles.page}>
@@ -19,7 +34,7 @@ export function TutoringPage() {
           <li>AP Computer Science Principles</li>
           <li>IB Computer Science</li>
           <li>Introductory Programming (Python, Java, C/C++)</li>
-          <li>Data Structures & Algorithms</li>
+          <li>Data Structures & Algorithms (Python, Java, C/C++)</li>
           <li>Systems Programming (C/C++)</li>
           <li>Operating Systems (C/C++)</li>
         </ul>
@@ -44,6 +59,21 @@ export function TutoringPage() {
           <li>60+ students</li>
           <li>5.0 Star Rating</li>
         </ul>
+      </div>
+
+      <div className={styles.subsection}>
+        <h3 className={styles.subsectionTitle}>Testimonials</h3>
+        <div className={styles.testimonialList}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className={styles.testimonial}>
+              <div className={styles.testimonialRating}>
+                {'★'.repeat(testimonial.rating)}{'☆'.repeat(5 - testimonial.rating)}
+              </div>
+              <p className={styles.testimonialReview}>&quot;{testimonial.review}&quot;</p>
+              <span className={styles.testimonialName}>— {testimonial.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.ctaSection}>

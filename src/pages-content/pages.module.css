@@ -317,6 +317,45 @@
   border-radius: 2px;
 }
 
+/* ─── Testimonials ─── */
+.testimonialList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.testimonial {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.testimonial:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.testimonialRating {
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-2);
+  letter-spacing: var(--space-1);
+}
+
+.testimonialReview {
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  font-style: italic;
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-2);
+}
+
+.testimonialName {
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
 /* ─── Tutoring CTA ─── */
 .ctaSection {
   margin-top: var(--space-8);
