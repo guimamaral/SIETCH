@@ -41,7 +41,7 @@ export function PurposePage() {
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;The mystery of life isn't a problem to solve, but a reality to experience.&quot;</span>
+        <span className={styles.quoteText}>&quot;The mystery of life isn&apos;t a problem to solve, but a reality to experience.&quot;</span>
         <span className={styles.quoteAttribution}>—  Jamis</span>
       </div>
     </section>

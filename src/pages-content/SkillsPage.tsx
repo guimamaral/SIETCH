@@ -60,7 +60,7 @@ export function SkillsPage() {
       </div>
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;Arrakis teaches the attitude of the knife - chopping off what's incomplete and saying: Now, it's complete because it's ended here.&quot;</span>
+        <span className={styles.quoteText}>&quot;Arrakis teaches the attitude of the knife - chopping off what&apos;s incomplete and saying: Now, it&apos;s complete because it&apos;s ended here.&quot;</span>
         <span className={styles.quoteAttribution}>— Paul Atreides</span>
       </div>
     </section>
