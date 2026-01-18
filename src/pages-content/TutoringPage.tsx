@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './pages.module.css';
+import { TutoringContactForm } from '@/components/TutoringContactForm';
 
 interface Testimonial {
   keywords: string[];
@@ -185,16 +186,8 @@ export function TutoringPage() {
       </div>
 
       <div className={styles.ctaSection}>
-        <p className={styles.paragraph}>
-          Interested in working together?
-        </p>
-        <a
-          href="mailto:your.email@example.com?subject=Tutoring Inquiry"
-          className={styles.ctaButton}
-        >
-          {/* TODO: Update email */}
-          Get in Touch →
-        </a>
+        <h3 className={styles.subsectionTitle}>Interested in working together?</h3>
+        <TutoringContactForm />
       </div>
 
       <hr className={styles.divider} />

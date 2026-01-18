@@ -1,0 +1,90 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 400px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.input,
+.textarea {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-fg-muted);
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea::placeholder {
+  color: var(--color-fg-subtle);
+}
+
+.submitButton {
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-fg);
+  background: transparent;
+  border: 1px solid var(--color-fg);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+}
+
+.errorMessage {
+  font-size: var(--font-size-sm);
+  color: #cc0000;
+}
+
+[data-theme='dark'] .errorMessage {
+  color: #ff6666;
+}
