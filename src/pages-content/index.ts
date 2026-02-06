@@ -5,4 +5,5 @@ export { ProjectsPage } from './ProjectsPage';
 export { SkillsPage } from './SkillsPage';
 export { TutoringPage } from './TutoringPage';
 export { BlogPage } from './BlogPage';
+export { ResumePage } from './ResumePage';
 export { ContactPage } from './ContactPage';

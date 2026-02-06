@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
       "img-src 'self' https: data:",
       "font-src 'self'",
       "connect-src 'self'",
-      "frame-ancestors 'none'",
+      "frame-ancestors 'self'",
       "base-uri 'self'",
       "form-action 'self'",
     ].join('; ')
@@ -25,7 +25,7 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Content-Type-Options', 'nosniff');
 
   // Prevent clickjacking
-  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
 
   // XSS Protection (legacy but still useful)
   response.headers.set('X-XSS-Protection', '1; mode=block');

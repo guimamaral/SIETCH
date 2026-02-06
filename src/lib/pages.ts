@@ -7,6 +7,7 @@ import {
   SkillsPage,
   TutoringPage,
   BlogPage,
+  ResumePage,
   ContactPage,
 } from '@/pages-content';
 
@@ -22,6 +23,7 @@ export const PAGES: PageConfig[] = [
   { key: 'skills', title: 'SKILLS', component: SkillsPage },
   { key: 'tutoring', title: 'TUTORING', component: TutoringPage },
   { key: 'blog', title: 'BLOG', component: BlogPage },
+  { key: 'resume', title: 'RESUME', component: ResumePage },
   { key: 'contact', title: 'CONTACT', component: ContactPage },
 ];
 
