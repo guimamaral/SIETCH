@@ -10,9 +10,9 @@ export const SITE_CONFIG = {
 
   // Social links - update these with your actual links
   social: {
-    email: 'your.email@example.com',
-    github: 'https://github.com/yourusername',
-    linkedin: 'https://linkedin.com/in/yourusername',
+    email: 'guim.amaral2004@gmail.com',
+    github: 'https://github.com/guimamaral',
+    linkedin: 'https://www.linkedin.com/in/guimamaral/',
   },
 
   // Location (optional, keep broad)

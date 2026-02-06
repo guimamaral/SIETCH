@@ -12,16 +12,8 @@ export function Footer() {
       </div>
 
       <div className={styles.links}>
-        {/* TODO: Update these links with your actual URLs */}
         <a
-          href="mailto:your.email@example.com"
-          className={styles.link}
-        >
-          EMAIL
-        </a>
-        <span className={styles.linkSeparator}>•</span>
-        <a
-          href="https://github.com/yourusername"
+          href="https://github.com/guimamaral"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
@@ -30,7 +22,7 @@ export function Footer() {
         </a>
         <span className={styles.linkSeparator}>•</span>
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/guimamaral/"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
@@ -40,7 +32,11 @@ export function Footer() {
       </div>
 
       <div className={styles.copyright}>
-        © {new Date().getFullYear()} GUILHERME AMARAL
+        © {new Date().getFullYear()} GUILHERME AMARAL. ALL RIGHTS RESERVED.
+      </div>
+
+      <div className={styles.disclaimer}>
+        Disclaimer: All content and opinions expressed here are solely my own.
       </div>
     </footer>
   );

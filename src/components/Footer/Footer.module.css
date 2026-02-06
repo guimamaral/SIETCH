@@ -58,6 +58,13 @@
   letter-spacing: var(--letter-spacing-wide);
 }
 
+.disclaimer {
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  font-style: italic;
+  letter-spacing: var(--letter-spacing-normal);
+}
+
 /* Mobile adjustments */
 @media (max-width: 640px) {
   .hints {
