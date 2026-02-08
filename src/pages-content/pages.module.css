@@ -510,6 +510,146 @@
   color: var(--color-bg);
 }
 
+/* ─── Reviews ─── */
+
+@keyframes bookTilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+@keyframes movieClap {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  30% { transform: scale(1.15) rotate(-5deg); }
+  60% { transform: scale(1.05) rotate(3deg); }
+}
+
+@keyframes tvPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.8; }
+}
+
+.reviewCategories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.reviewCategory {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.reviewCategory:last-child {
+  border-bottom: none;
+}
+
+.reviewCategoryHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-4);
+  cursor: default;
+}
+
+.reviewCategoryIcon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-fg-muted);
+  transition: color var(--transition-fast);
+}
+
+.reviewCategoryHeader:hover .reviewCategoryIcon {
+  color: var(--color-accent);
+}
+
+.reviewCategory[data-category="books"] .reviewCategoryHeader:hover .reviewCategoryIcon {
+  animation: bookTilt 600ms ease-in-out;
+}
+
+.reviewCategory[data-category="movies"] .reviewCategoryHeader:hover .reviewCategoryIcon {
+  animation: movieClap 500ms ease-in-out;
+}
+
+.reviewCategory[data-category="television"] .reviewCategoryHeader:hover .reviewCategoryIcon {
+  animation: tvPulse 500ms ease-in-out;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.reviewEntry {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.reviewEntry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.reviewEntryHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .reviewEntryHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.reviewTitle {
+  font-weight: 600;
+}
+
+.reviewRating {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-fg);
+  font-variant-numeric: tabular-nums;
+  padding-right: var(--space-2);
+}
+
+.reviewRatingMax {
+  font-weight: 400;
+  color: var(--color-fg-subtle);
+}
+
+.reviewMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-2);
+}
+
+.reviewMetaSep {
+  color: var(--color-fg-subtle);
+  margin: 0 var(--space-1);
+}
+
+.reviewNotes {
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  font-style: italic;
+  line-height: var(--line-height-relaxed);
+  margin-top: var(--space-2);
+}
+
 /* ─── Contact ─── */
 .contactContent {
   display: flex;
