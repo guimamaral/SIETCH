@@ -376,6 +376,7 @@
   color: var(--color-fg-subtle);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
+  padding-right: var(--space-2);
 }
 
 /* ─── Divider ─── */
