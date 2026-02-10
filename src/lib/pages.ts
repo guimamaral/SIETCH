@@ -2,7 +2,7 @@ import { PageConfig } from '@/types';
 import {
   LandingPage,
   PurposePage,
-  WorkExperiencePage,
+  ExperiencePage,
   ProjectsPage,
   SkillsPage,
   TutoringPage,
@@ -19,7 +19,7 @@ import {
 export const PAGES: PageConfig[] = [
   { key: 'landing', title: 'LANDING', component: LandingPage },
   { key: 'purpose', title: 'PURPOSE', component: PurposePage },
-  { key: 'work', title: 'WORK EXPERIENCE', component: WorkExperiencePage },
+  { key: 'work', title: 'EXPERIENCE', component: ExperiencePage },
   { key: 'projects', title: 'PROJECTS', component: ProjectsPage },
   { key: 'skills', title: 'SKILLS', component: SkillsPage },
   { key: 'tutoring', title: 'TUTORING', component: TutoringPage },

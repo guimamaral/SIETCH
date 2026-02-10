@@ -1,6 +1,6 @@
 export { LandingPage } from './LandingPage';
 export { PurposePage } from './PurposePage';
-export { WorkExperiencePage } from './WorkExperiencePage';
+export { ExperiencePage } from './ExperiencePage';
 export { ProjectsPage } from './ProjectsPage';
 export { SkillsPage } from './SkillsPage';
 export { TutoringPage } from './TutoringPage';

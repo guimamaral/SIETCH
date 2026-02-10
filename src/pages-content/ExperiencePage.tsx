@@ -9,8 +9,16 @@ interface WorkEntry {
   bullets: string[];
 }
 
-const workExperience: WorkEntry[] = [
-  // TODO: Replace with your work experience
+const Experience: WorkEntry[] = [
+  {
+    role: 'Technical AI Safety Fellow',
+    company: 'Bluedot Impact',
+    dates: 'February 2026 - Present',
+    bullets: [
+      '6-Week Course on Technical AI Safety Fundamentals'
+    ],
+  },
+
   {
     role: 'Systems Software Engieer',
     company: 'NVIDIA Corporation',
@@ -55,17 +63,17 @@ const workExperience: WorkEntry[] = [
   },
 ];
 
-export function WorkExperiencePage() {
+export function ExperiencePage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
         <span className={styles.siteName}>GOM JABBAR</span>
         <span className={styles.siteDefinition}>a poisoned needle used by the Bene Gesserit to test if someone possesses the human ability to overcome instinct and fear</span>
       </div>
-      <h2 className={styles.sectionTitle}>WORK EXPERIENCE</h2>
+      <h2 className={styles.sectionTitle}>EXPERIENCE</h2>
 
       <div className={styles.entryList}>
-        {workExperience.map((entry, index) => (
+        {Experience.map((entry, index) => (
           <article key={index} className={styles.entry}>
             <header className={styles.entryHeader}>
               <span className={styles.entryTitle}>
