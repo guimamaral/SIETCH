@@ -5,14 +5,15 @@ import { PageHeader } from '@/components/PageHeader';
 import { NavStrip } from '@/components/NavStrip';
 import { PageViewport } from '@/components/PageViewport';
 import { Footer } from '@/components/Footer';
-import { BlogPostMeta } from '@/types';
+import { BlogPostMeta, YouTubeVideo } from '@/types';
 import styles from './SiteShell.module.css';
 
 interface SiteShellProps {
   posts?: BlogPostMeta[];
+  videos?: YouTubeVideo[];
 }
 
-export function SiteShell({ posts = [] }: SiteShellProps) {
+export function SiteShell({ posts = [], videos = [] }: SiteShellProps) {
   // Initialize keyboard navigation
   useKeyboardNavigation();
 
@@ -21,7 +22,7 @@ export function SiteShell({ posts = [] }: SiteShellProps) {
       <div className={styles.container}>
         <PageHeader />
         <NavStrip />
-        <PageViewport posts={posts} />
+        <PageViewport posts={posts} videos={videos} />
         <Footer />
       </div>
     </div>

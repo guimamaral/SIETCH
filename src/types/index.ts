@@ -8,6 +8,7 @@ export interface PageConfig {
 
 export interface PageProps {
   posts?: BlogPostMeta[];
+  videos?: YouTubeVideo[];
 }
 
 export interface BlogPostMeta {
@@ -22,6 +23,12 @@ export interface BlogPost extends BlogPostMeta {
   content: string;
   contentHtml: string;
   draft: boolean;
+}
+
+export interface YouTubeVideo {
+  videoId: string;
+  title: string;
+  publishedAt: string;
 }
 
 export type Theme = 'light' | 'dark';

@@ -6,5 +6,6 @@ export { SkillsPage } from './SkillsPage';
 export { TutoringPage } from './TutoringPage';
 export { BlogPage } from './BlogPage';
 export { ReviewsPage } from './ReviewsPage';
+export { YouTubePage } from './YouTubePage';
 export { ResumePage } from './ResumePage';
 export { ContactPage } from './ContactPage';

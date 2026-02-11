@@ -15,6 +15,7 @@ export function middleware(request: NextRequest) {
       "img-src 'self' https: data:",
       "font-src 'self'",
       "connect-src 'self'",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
       "frame-ancestors 'self'",
       "base-uri 'self'",
       "form-action 'self'",

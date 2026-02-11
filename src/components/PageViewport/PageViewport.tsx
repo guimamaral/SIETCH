@@ -3,14 +3,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigation } from '@/hooks';
 import { PAGES } from '@/lib/pages';
-import { BlogPostMeta } from '@/types';
+import { BlogPostMeta, YouTubeVideo } from '@/types';
 import styles from './PageViewport.module.css';
 
 interface PageViewportProps {
   posts?: BlogPostMeta[];
+  videos?: YouTubeVideo[];
 }
 
-export function PageViewport({ posts = [] }: PageViewportProps) {
+export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
   const { currentIndex } = useNavigation();
   const [displayIndex, setDisplayIndex] = useState(currentIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -39,7 +40,7 @@ export function PageViewport({ posts = [] }: PageViewportProps) {
       role="main"
     >
       <div className={`${styles.scrollContainer} scroll-container`}>
-        <CurrentPage posts={posts} />
+        <CurrentPage posts={posts} videos={videos} />
       </div>
 
       {/* Screen reader announcement for page changes */}
