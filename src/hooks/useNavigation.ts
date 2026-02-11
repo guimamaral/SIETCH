@@ -6,7 +6,6 @@ import { useThemeContext } from '@/context/ThemeContext';
 
 /**
  * Hook that handles keyboard navigation
- * Call this once at the top level of your app
  */
 export function useKeyboardNavigation() {
   const { goNext, goPrev, goFirst, goLast } = useNavigationContext();
