@@ -36,11 +36,13 @@ export type Theme = 'light' | 'dark';
 export interface NavigationContextValue {
   currentIndex: number;
   totalPages: number;
+  nullptrActive: boolean;
   goTo: (index: number) => void;
   goNext: () => void;
   goPrev: () => void;
   goFirst: () => void;
   goLast: () => void;
+  goToNull: () => void;
 }
 
 export interface ThemeContextValue {

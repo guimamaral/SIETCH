@@ -21,6 +21,7 @@ interface NavigationProviderProps {
 
 export function NavigationProvider({ children, initialIndex = 0 }: NavigationProviderProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [nullptrActive, setNullptrActive] = useState(false);
 
   // Parse hash on mount and handle browser navigation
   useEffect(() => {
@@ -62,34 +63,45 @@ export function NavigationProvider({ children, initialIndex = 0 }: NavigationPro
 
   const goTo = useCallback((index: number) => {
     if (index >= 0 && index < TOTAL_PAGES) {
+      setNullptrActive(false);
       setCurrentIndex(index);
     }
   }, []);
 
   const goNext = useCallback(() => {
+    setNullptrActive(false);
     setCurrentIndex((prev) => (prev + 1) % TOTAL_PAGES);
   }, []);
 
   const goPrev = useCallback(() => {
+    setNullptrActive(false);
     setCurrentIndex((prev) => (prev - 1 + TOTAL_PAGES) % TOTAL_PAGES);
   }, []);
 
   const goFirst = useCallback(() => {
+    setNullptrActive(false);
     setCurrentIndex(0);
   }, []);
 
   const goLast = useCallback(() => {
+    setNullptrActive(false);
     setCurrentIndex(TOTAL_PAGES - 1);
+  }, []);
+
+  const goToNull = useCallback(() => {
+    setNullptrActive(true);
   }, []);
 
   const value: NavigationContextValue = {
     currentIndex,
     totalPages: TOTAL_PAGES,
+    nullptrActive,
     goTo,
     goNext,
     goPrev,
     goFirst,
     goLast,
+    goToNull,
   };
 
   return (

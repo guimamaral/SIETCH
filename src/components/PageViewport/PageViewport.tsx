@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigation } from '@/hooks';
 import { PAGES } from '@/lib/pages';
+import { NullPage } from '@/pages-content/NullPage';
 import { BlogPostMeta, YouTubeVideo } from '@/types';
 import styles from './PageViewport.module.css';
 
@@ -12,7 +13,7 @@ interface PageViewportProps {
 }
 
 export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
-  const { currentIndex } = useNavigation();
+  const { currentIndex, nullptrActive } = useNavigation();
   const [displayIndex, setDisplayIndex] = useState(currentIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const prevIndexRef = useRef(currentIndex);
@@ -40,7 +41,7 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
       role="main"
     >
       <div className={`${styles.scrollContainer} scroll-container`}>
-        <CurrentPage posts={posts} videos={videos} />
+        {nullptrActive ? <NullPage /> : <CurrentPage posts={posts} videos={videos} />}
       </div>
 
       {/* Screen reader announcement for page changes */}
