@@ -8,15 +8,14 @@ export const SITE_CONFIG = {
   description: 'Guilherme Amaral\'s Sietch',
   subtitle: 'Software Engineer • Security • Systems',
 
-  // Social links - update these with your actual links
   social: {
-    email: 'guim.amaral2004@gmail.com',
-    github: 'https://github.com/guimamaral',
-    linkedin: 'https://www.linkedin.com/in/guimamaral/',
+    email: process.env.NEXT_PUBLIC_EMAIL ?? '',
+    github: process.env.NEXT_PUBLIC_GITHUB_URL ?? '',
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? '',
+    youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? '',
   },
 
-  // Location (optional, keep broad)
-  location: 'Austin, TX',
+  location: process.env.NEXT_PUBLIC_LOCATION ?? '',
 };
 
 // Local storage keys

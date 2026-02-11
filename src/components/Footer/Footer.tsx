@@ -1,5 +1,6 @@
 'use client';
 
+import { SITE_CONFIG } from '@/lib/constants';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -13,7 +14,7 @@ export function Footer() {
 
       <div className={styles.links}>
         <a
-          href="https://github.com/guimamaral"
+          href={SITE_CONFIG.social.github}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.iconLink}
@@ -30,7 +31,7 @@ export function Footer() {
           </svg>
         </a>
         <a
-          href="https://www.linkedin.com/in/guimamaral/"
+          href={SITE_CONFIG.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.iconLink}
@@ -47,7 +48,7 @@ export function Footer() {
           </svg>
         </a>
         <a
-          href="https://www.youtube.com/@SingularitySurvival"
+          href={SITE_CONFIG.social.youtube}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.iconLink}

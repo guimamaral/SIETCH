@@ -1,7 +1,7 @@
 import { YouTubeVideo } from '@/types';
 
-export const CHANNEL_ID = 'UCeng0TOdsoTzs8ySdSofImQ';
-export const CHANNEL_URL = `https://www.youtube.com/@SingularitySurvival`;
+export const CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID ?? '';
+export const CHANNEL_URL = process.env.NEXT_PUBLIC_YOUTUBE_URL ?? '';
 
 const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 

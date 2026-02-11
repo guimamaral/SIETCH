@@ -1,5 +1,6 @@
 'use client';
 
+import { SITE_CONFIG } from '@/lib/constants';
 import styles from './pages.module.css';
 
 export function ContactPage() {
@@ -13,45 +14,40 @@ export function ContactPage() {
 
       <div className={styles.contactContent}>
         <p className={styles.paragraph}>
-          {/* TODO: Replace with your contact message */}
           The best way to reach me is via email. I typically respond within 24 - 48 hours.
         </p>
 
         <div className={styles.contactLinks}>
           <a
-            href="mailto:your.email@example.com"
+            href={`mailto:${SITE_CONFIG.social.email}`}
             className={styles.contactLink}
           >
-            {/* TODO: Update email */}
-            guim.amaral2004@gmail.com
+            {SITE_CONFIG.social.email}
           </a>
 
           <div className={styles.socialLinks}>
             <a
-              href="https://github.com/guimamaral"
+              href={SITE_CONFIG.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
             >
-              {/* TODO: Update GitHub */}
               GitHub
             </a>
             <span className={styles.separator}>•</span>
             <a
-              href="https://linkedin.com/in/guimamaral"
+              href={SITE_CONFIG.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
             >
-              {/* TODO: Update LinkedIn */}
               LinkedIn
             </a>
           </div>
         </div>
 
         <p className={styles.location}>
-          {/* TODO: Update location (optional) */}
-          Based in Austin, TX
+          Based in {SITE_CONFIG.location}
         </p>
       </div>
 
