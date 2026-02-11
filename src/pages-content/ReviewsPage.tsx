@@ -202,8 +202,8 @@ export function ReviewsPage() {
   return (
     <section className={styles.page}>
       <div className={styles.siteTitle}>
-        <span className={styles.siteName}>TLEILAXU</span>
-        <span className={styles.siteDefinition}>masters of biological engineering whose axlotl tanks produced gholas, face dancers, and artificial eyes for the known universe</span>
+        <span className={styles.siteName}>CALADAN</span>
+        <span className={styles.siteDefinition}>A lush, oceanic planet with a wet, temperate climate, Caladan had served as the Atreides’ home for at least twenty-six generations</span>
       </div>
       <h2 className={styles.sectionTitle}>REVIEWS</h2>
 

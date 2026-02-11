@@ -60,7 +60,7 @@ export function YouTubePage({ videos = [] }: YouTubePageProps) {
       )}
 
       <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;The people who can destroy a thing, they control it.&quot;</span>
+        <span className={styles.quoteText}>&quot;There is no escape—we pay for the violence of our ancestors.&quot;</span>
         <span className={styles.quoteAttribution}>— Paul Atreides</span>
       </div>
     </section>
