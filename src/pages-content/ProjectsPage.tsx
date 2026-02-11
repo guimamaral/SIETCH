@@ -11,7 +11,6 @@ interface Project {
 }
 
 const projects: Project[] = [
-  // TODO: Replace with your projects
   {
     name: 'gheithOS',
     link: 'https://github.com/yourusername/securevault',

@@ -14,7 +14,6 @@ export function PurposePage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Interests</h3>
         <ul className={styles.list}>
-          {/* TODO: Replace with your current ventures */}
           <li>Building secure, performant, and mission-critical systems</li>
           <li>Analyzing fragile geopolitical relationships</li>
           <li>Navigating a less than humane world in the presence of superintelligent AI systems</li>
@@ -24,7 +23,6 @@ export function PurposePage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Aspirations</h3>
         <ul className={styles.list}>
-          {/* TODO: Replace with your aspirations */}
           <li>Work on frontier AI Safety problems</li>
           <li>Complete a postgraduate degree (in what?)</li>
           <li>Live a fulfilling life (whatever that means)</li>
@@ -34,7 +32,6 @@ export function PurposePage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Now</h3>
         <p className={styles.paragraph}>
-          {/* TODO: Replace with what you're focused on this month */}
           Currently focused on building a monolithic kernel using Rust/C++ 
           for the AArch64 architecture targeted at a Raspberry Pi 4b.
         </p>

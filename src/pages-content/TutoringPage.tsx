@@ -12,7 +12,6 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  // TODO: Add your testimonials
   {
     keywords: ['Personalized Attention', 'Encouragement', 'Adaptability'],
     review: 'I am thrilled to commend Gui for their exceptional dedication and effectiveness as a tutor. Gui\s communication skills are truly remarkable, effortlessly breaking down complex concepts and making them accessible to all students. The learning environment they cultivate is not only supportive but also engaging, fostering a passion for the subject matter. Gui goes beyond the call of duty by adapting their teaching methods to suit individual learning styles, ensuring that each student receives the personalized attention they need to succeed. Their commitment to being available for additional support showcases a genuine investment in the academic success of their students. Gui\'s innovative and creative approach to teaching has not only made the learning experience enjoyable but has also led to noticeable progress and improvement among those under their guidance. Their professionalism and punctuality further underscore their dedication to the role of an outstanding educator. I am truly grateful for Gui\'s invaluable contribution to the academic journey of all students fortunate enough to have them as a tutor.',
@@ -153,7 +152,6 @@ export function TutoringPage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>What I Teach</h3>
         <ul className={styles.list}>
-          {/* TODO: Replace with your tutoring topics */}
           <li>AP Computer Science A (Java)</li>
           <li>AP Computer Science Principles</li>
           <li>IB Computer Science</li>
@@ -168,7 +166,6 @@ export function TutoringPage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Who It&apos;s For</h3>
         <ul className={styles.list}>
-          {/* TODO: Replace with your target audience */}
           <li>High-School students</li>
           <li>University students</li>
           <li>Engineers preparing for technical interviews</li>
@@ -179,7 +176,6 @@ export function TutoringPage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Track Record</h3>
         <ul className={styles.list}>
-          {/* TODO: Replace with your metrics */}
           <li>1,000+ hours tutored (660+ on Wyzant)</li>
           <li>60+ students</li>
           <li>5.0 Star Rating</li>

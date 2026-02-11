@@ -8,7 +8,6 @@ interface SkillCategory {
 }
 
 const skillCategories: SkillCategory[] = [
-  // TODO: Replace with your skills
   {
     name: 'Languages',
     skills: [
