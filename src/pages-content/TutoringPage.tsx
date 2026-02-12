@@ -1,5 +1,6 @@
 'use client';
 
+import { SITE_CONFIG } from '@/lib/constants';
 import styles from './pages.module.css';
 import { TutoringContactForm } from '@/components/TutoringContactForm';
 
@@ -147,7 +148,17 @@ export function TutoringPage() {
         <span className={styles.siteName}>SHAI-HULUD</span>
         <span className={styles.siteDefinition}>the Fremen term for the sandworm of Arrakis</span>
       </div>
-      <h2 className={styles.sectionTitle}>TUTORING</h2>
+      <div className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>TUTORING</h2>
+        <a
+          href={SITE_CONFIG.social.wyzant}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.sectionLink}
+        >
+          Wyzant Profile →
+        </a>
+      </div>
 
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>What I Teach</h3>
@@ -176,10 +187,9 @@ export function TutoringPage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Track Record</h3>
         <ul className={styles.list}>
-          <li>1,000+ hours tutored (660+ on Wyzant)</li>
+          <li>1,000+ hours tutored (685+ verified on Wyzant)</li>
           <li>80+ students</li>
           <li>5.0 Star Rating</li>
-          <li>https://www.wyzant.com/Tutors/CSHelpByGui</li>
         </ul>
       </div>
 
