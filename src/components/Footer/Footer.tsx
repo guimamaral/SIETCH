@@ -71,15 +71,7 @@ export function Footer() {
           className={styles.iconLink}
           aria-label="Wyzant"
         >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M12 2 L23 12 L18 22 L12 13 L6 22 L1 12 Z" />
-          </svg>
+          <span className={styles.wyzantIcon} aria-hidden="true" />
         </a>
       </div>
 
