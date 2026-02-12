@@ -177,8 +177,9 @@ export function TutoringPage() {
         <h3 className={styles.subsectionTitle}>Track Record</h3>
         <ul className={styles.list}>
           <li>1,000+ hours tutored (660+ on Wyzant)</li>
-          <li>60+ students</li>
+          <li>80+ students</li>
           <li>5.0 Star Rating</li>
+          <li>https://www.wyzant.com/Tutors/CSHelpByGui</li>
         </ul>
       </div>
 

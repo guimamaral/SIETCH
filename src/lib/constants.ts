@@ -13,6 +13,7 @@ export const SITE_CONFIG = {
     github: process.env.NEXT_PUBLIC_GITHUB_URL ?? '',
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? '',
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? '',
+    wyzant: process.env.NEXT_PUBLIC_WYZANT_URL ?? '',
   },
 
   location: process.env.NEXT_PUBLIC_LOCATION ?? '',
