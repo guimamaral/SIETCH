@@ -30,7 +30,7 @@ export function NavigationProvider({ children, initialIndex = 0 }: NavigationPro
 
       if (!hash) {
         // No hash, update URL to current index
-        window.history.replaceState(null, '', `#${toHex(currentIndex)}`);
+        window.history.replaceState(null, '', `#${toHex(initialIndex)}`);
         return;
       }
 
@@ -51,7 +51,7 @@ export function NavigationProvider({ children, initialIndex = 0 }: NavigationPro
     // Handle browser back/forward
     window.addEventListener('hashchange', parseHashAndNavigate);
     return () => window.removeEventListener('hashchange', parseHashAndNavigate);
-  }, []); // Only run on mount
+  }, [initialIndex]);
 
   // Update hash when index changes (but not on initial mount)
   useEffect(() => {
