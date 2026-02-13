@@ -13,7 +13,7 @@ export function LandingPage() {
         GUILHERME AMARAL
       </h1>
       <p className={styles.heroSubtitle}>
-        John Connor / Ted Kaczynski hybrid
+        Aspiring John Connor
       </p>
       <div className={styles.heroIntro}>
         <p><strong>Academically,</strong> I am a senior at the University of Texas at Austin studying computer science.</p>
