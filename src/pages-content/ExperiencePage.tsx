@@ -15,7 +15,7 @@ const Experience: WorkEntry[] = [
     company: 'Bluedot Impact',
     dates: 'February 2026 - Present',
     bullets: [
-      '6-Week Course on Technical AI Safety Fundamentals'
+      'Intensive 6-Week Course on Technical AI Safety Fundamentals'
     ],
   },
 
