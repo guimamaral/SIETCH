@@ -155,7 +155,7 @@ a:focus-visible {
 button {
   font-family: inherit;
   font-size: inherit;
-  cursor: pointer;
+  cursor: url('/gom-jabbar_cursor.png'), auto;
   border: none;
   background: none;
 }
