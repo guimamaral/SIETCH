@@ -23,9 +23,6 @@ export function LandingPage() {
             <p><strong>Professionally,</strong> I am an incoming System Software Engineer at NVIDIA. I also tutor on the side.</p>
             <p><strong>Fundamentally,</strong> I hate bullies and tyrants (with a passion).</p>
           </div>
-          <p className={styles.heroHint}>
-            Use arrow keys to navigate
-          </p>
         </div>
 
         <div className={styles.quoteSection}>
@@ -39,16 +36,21 @@ export function LandingPage() {
         </div>
       </div>
 
-      <div className={styles.landingPhoto}>
-        <Image
-          src="/me-and-bro.png"
-          alt="Guilherme and his brother"
-          fill
-          sizes="42vw"
-          style={{ objectFit: 'cover', objectPosition: 'center top' }}
-          priority
-        />
-      </div>
+      <figure className={styles.landingPhoto}>
+        <div className={styles.landingImageWrapper}>
+          <Image
+            src="/me-and-bro.png"
+            alt="Guilherme and his brother"
+            fill
+            sizes="42vw"
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            priority
+          />
+        </div>
+        <figcaption className={styles.landingCaption}>
+          My little brother Logan and I overlooking Glacier Point in Yosemite National Park.
+        </figcaption>
+      </figure>
     </section>
   );
 }
