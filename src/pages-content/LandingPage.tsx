@@ -44,6 +44,7 @@ export function LandingPage() {
           src="/me-and-bro.png"
           alt="Guilherme and his brother"
           fill
+          sizes="42vw"
           style={{ objectFit: 'cover', objectPosition: 'center top' }}
           priority
         />
