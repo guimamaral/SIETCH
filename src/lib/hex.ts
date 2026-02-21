@@ -26,10 +26,3 @@ export function fromHex(str: string): number | null {
   const num = parseInt(cleaned, 16);
   return isNaN(num) ? null : num;
 }
-
-/**
- * Format page indicator: "0x03"
- */
-export function formatPageIndicator(current: number, total: number): string {
-  return toHex(current);
-}

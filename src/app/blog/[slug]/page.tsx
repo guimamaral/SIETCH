@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import DOMPurify from 'isomorphic-dompurify';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog';
+import { formatDate } from '@/lib/format';
 import styles from './page.module.css';
 
 interface BlogPostPageProps {
@@ -32,15 +33,6 @@ export async function generateMetadata({
   };
 }
 
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
-
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -61,7 +53,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <article className={styles.article}>
           <header className={styles.header}>
             <time className={styles.date} dateTime={post.date}>
-              {formatDate(post.date)}
+              {formatDate(post.date, true)}
             </time>
             <h1 className={styles.title}>{post.title}</h1>
             {post.tags.length > 0 && (

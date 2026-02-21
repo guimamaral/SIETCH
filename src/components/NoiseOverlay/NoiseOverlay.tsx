@@ -37,7 +37,7 @@ const HIGHLIGHT_CLAMP = 0.55;  // hard cap — no pixel exceeds ~140/255 pre-gam
 const GAMMA           = 1.6;   // compresses highlights; effective max ~0.38
 const OPACITY         = 0.05;
 const FPS             = 20;
-const GRAIN_SIZE      = 1;     // 1 = per-CSS-pixel; raise for coarser grain
+const GRAIN_SIZE      = 2;     // 2 = half-res canvas; 4× fewer pixel ops
 
 export function NoiseOverlay() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -99,8 +99,19 @@ export function NoiseOverlay() {
     window.addEventListener('resize', resize);
     drawNoise();
 
+    function onVisibilityChange() {
+      if (document.hidden) {
+        cancelAnimationFrame(animationId);
+      } else {
+        lastTime = 0;
+        drawNoise();
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
     return () => {
       window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       cancelAnimationFrame(animationId);
     };
   }, []);

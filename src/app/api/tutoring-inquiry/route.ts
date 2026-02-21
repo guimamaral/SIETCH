@@ -53,6 +53,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate Content-Type
+    const contentType = request.headers.get('content-type');
+    if (!contentType?.includes('application/json')) {
+      return NextResponse.json(
+        { error: 'Content-Type must be application/json' },
+        { status: 415 }
+      );
+    }
+
     // Check request body size
     const contentLength = request.headers.get('content-length');
     if (contentLength && parseInt(contentLength) > INPUT_LIMITS.requestBodySize) {
@@ -129,8 +138,7 @@ export async function POST(request: NextRequest) {
       success: true,
       message: 'Inquiry received successfully',
     });
-  } catch (error) {
-    console.error('Error processing tutoring inquiry:', error);
+  } catch {
     return NextResponse.json(
       { error: 'Failed to send message. Please try again later.' },
       { status: 500 }

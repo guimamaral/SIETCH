@@ -2,19 +2,11 @@
 
 import Link from 'next/link';
 import { BlogPostMeta } from '@/types';
+import { formatDate } from '@/lib/format';
 import styles from './pages.module.css';
 
 interface BlogPageProps {
   posts?: BlogPostMeta[];
-}
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
 }
 
 export function BlogPage({ posts = [] }: BlogPageProps) {

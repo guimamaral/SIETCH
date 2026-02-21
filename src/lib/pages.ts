@@ -32,19 +32,3 @@ export const PAGES: PageConfig[] = [
 ];
 
 export const TOTAL_PAGES = PAGES.length;
-
-/**
- * Get page config by index
- */
-export function getPageByIndex(index: number): PageConfig | undefined {
-  return PAGES[index];
-}
-
-/**
- * Get page config by key
- */
-export function getPageByKey(key: string): { page: PageConfig; index: number } | undefined {
-  const index = PAGES.findIndex((p) => p.key === key);
-  if (index === -1) return undefined;
-  return { page: PAGES[index], index };
-}

@@ -1,3 +1,6 @@
+import { NextRequest } from 'next/server';
+import { checkRateLimit } from '@/lib/security';
+
 const TOKEN_ENDPOINT    = 'https://accounts.spotify.com/api/token';
 const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing';
 
@@ -23,7 +26,22 @@ async function getAccessToken(): Promise<string> {
   return data.access_token;
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const clientIp = request.headers.get('x-forwarded-for')?.split(',')[0] ||
+    request.headers.get('x-real-ip') ||
+    'unknown';
+  const rateLimit = checkRateLimit(`spotify:${clientIp}`, 30, 60 * 1000); // 30 req/min
+
+  if (!rateLimit.allowed) {
+    return Response.json(
+      { isPlaying: false },
+      {
+        status: 429,
+        headers: { 'Retry-After': Math.ceil(rateLimit.resetIn / 1000).toString() },
+      }
+    );
+  }
+
   const accessToken = await getAccessToken();
 
   const res = await fetch(NOW_PLAYING_ENDPOINT, {

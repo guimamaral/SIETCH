@@ -15,14 +15,12 @@ export async function getLatestVideos(): Promise<YouTubeVideo[]> {
     const response = await fetch(RSS_URL, { next: { revalidate: 3600 } });
 
     if (!response.ok) {
-      console.error(`YouTube RSS fetch failed: ${response.status}`);
       return [];
     }
 
     const xml = await response.text();
     return parseRssFeed(xml);
-  } catch (error) {
-    console.error('Failed to fetch YouTube RSS feed:', error);
+  } catch {
     return [];
   }
 }

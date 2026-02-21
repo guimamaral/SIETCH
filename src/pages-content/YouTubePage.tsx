@@ -2,19 +2,11 @@
 
 import { YouTubeVideo } from '@/types';
 import { CHANNEL_URL } from '@/lib/youtube';
+import { formatDate } from '@/lib/format';
 import styles from './pages.module.css';
 
 interface YouTubePageProps {
   videos?: YouTubeVideo[];
-}
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
 }
 
 export function YouTubePage({ videos = [] }: YouTubePageProps) {

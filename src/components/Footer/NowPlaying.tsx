@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './Footer.module.css';
 
@@ -13,36 +13,61 @@ interface Track {
   songUrl?:  string;
 }
 
+function isSafeSpotifyUrl(url?: string): boolean {
+  return !!url && url.startsWith('https://open.spotify.com/');
+}
+
 export function NowPlaying() {
   const [track, setTrack] = useState<Track | null>(null);
 
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const fetchTrack = useCallback(async () => {
+    try {
+      const res  = await window.fetch('/api/spotify/now-playing');
+      const data = await res.json();
+      setTrack(data);
+    } catch {
+      // fail silently — Spotify is non-critical
+    }
+  }, []);
+
   useEffect(() => {
-    async function fetch() {
-      try {
-        const res  = await window.fetch('/api/spotify/now-playing');
-        const data = await res.json();
-        setTrack(data);
-      } catch {
-        // fail silently — Spotify is non-critical
+    function startPolling() {
+      fetchTrack();
+      intervalRef.current = setInterval(fetchTrack, 30_000);
+    }
+
+    function stopPolling() {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     }
 
-    fetch();
-    const id = setInterval(fetch, 30_000);
-    return () => clearInterval(id);
-  }, []);
+    function onVisibilityChange() {
+      if (document.hidden) {
+        stopPolling();
+      } else {
+        startPolling();
+      }
+    }
+
+    startPolling();
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    return () => {
+      stopPolling();
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
+  }, [fetchTrack]);
 
   if (!track?.isPlaying) {
     return <span className={styles.nowPlayingIdle}>—</span>;
   }
 
-  return (
-    <a
-      href={track.songUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.nowPlayingTrack}
-    >
+  const content = (
+    <>
       {track.albumArt && (
         <Image
           src={track.albumArt}
@@ -50,10 +75,24 @@ export function NowPlaying() {
           width={14}
           height={14}
           className={styles.nowPlayingArt}
-          unoptimized
         />
       )}
       <span>{track.title} — {track.artist}</span>
-    </a>
+    </>
   );
+
+  if (isSafeSpotifyUrl(track.songUrl)) {
+    return (
+      <a
+        href={track.songUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.nowPlayingTrack}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <span className={styles.nowPlayingTrack}>{content}</span>;
 }

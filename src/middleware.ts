@@ -5,16 +5,21 @@ export function middleware(request: NextRequest) {
   const response = NextResponse.next();
 
   // Content Security Policy
-  // Note: 'unsafe-inline' and 'unsafe-eval' needed for Next.js
+  const isDev = process.env.NODE_ENV === 'development';
+  const scriptSrc = isDev
+    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"  // unsafe-eval only in dev (hot reload)
+    : "script-src 'self' 'unsafe-inline'";                // production: no eval
   response.headers.set(
     'Content-Security-Policy',
     [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // unsafe-eval needed for Next.js
+      scriptSrc,
       "style-src 'self' 'unsafe-inline'", // unsafe-inline needed for CSS modules
       "img-src 'self' https: data:",
       "font-src 'self'",
       "connect-src 'self'",
+      "media-src 'self' https://i.scdn.co",
+      "object-src 'none'",
       "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
       "frame-ancestors 'self'",
       "base-uri 'self'",
