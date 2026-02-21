@@ -6,6 +6,6 @@
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
-  image-rendering: pixelated;
+  /* opacity is set inline from the OPACITY constant in NoiseOverlay.tsx */
+  /* image-rendering intentionally omitted — bilinear smoothing softens grain */
 }
