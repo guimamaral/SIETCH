@@ -5,24 +5,39 @@ import styles from './NoiseOverlay.module.css';
 
 // ── Tuning knobs ──────────────────────────────────────────────────────────────
 //
-// GRAIN_SIZE   Spatial frequency. 1 = one canvas pixel per CSS pixel (finest).
-//              Raise to 2–3 for coarser, chunkier static.
+// BASE_LEVEL       Center of the noise distribution, normalized 0–1.
+//                  0.5 = mid-gray (too white on dark backgrounds).
+//                  0.30–0.40 = darker baseline; speckles read as dim gray.
+//                  → To make it darker: lower this value.
 //
-// OPACITY      Overall layer transparency (0.0–1.0).
-//              0.04 is barely-there; 0.12 is clearly visible.
+// AMPLITUDE        Brightness swing around BASE_LEVEL (normalized, 0–1).
+//                  Smaller = more uniform / less flicker. 0.12–0.20 is subtle.
+//                  → To reduce intensity: lower this value.
 //
-// CONTRAST     Brightness swing per grain (0–255). Values are distributed
-//              around mid-gray (128), so ±CONTRAST keeps them away from
-//              harsh pure-white / pure-black.
-//              30 = extremely subtle; 80 = noticeable flicker.
+// HIGHLIGHT_CLAMP  Hard cap on per-pixel brightness (normalized 0–1).
+//                  Prevents near-white speckles regardless of distribution.
+//                  0.55 means no pixel exceeds ~140/255 before gamma.
+//                  → To reduce whites: lower this value.
 //
-// FPS          Animation framerate. 18–24 = smooth flicker; 8–12 = choppy/CRT.
+// GAMMA            Power-curve exponent applied after clamping. > 1 pushes
+//                  the distribution toward darker values by compressing
+//                  the top end (e.g. 1.5 turns 0.55 → 0.40 effective).
+//                  → To reduce whites more aggressively: raise this value.
+//
+// OPACITY          Layer-level CSS transparency (0.0–1.0).
+//                  Prefer tuning brightness first; use this for final trim.
+//                  → To reduce overall visibility: lower this value.
+//
+// FPS              Animation framerate. 18–24 = smooth; 8–12 = choppy/CRT.
 //
 // ─────────────────────────────────────────────────────────────────────────────
-const GRAIN_SIZE = 1;   // go lower (toward 0.5) = finer; higher = blockier
-const OPACITY    = 0.06;
-const CONTRAST   = 45;
-const FPS        = 20;
+const BASE_LEVEL      = 0.35;  // darker baseline — bias away from white
+const AMPLITUDE       = 0.15;  // low swing; keeps speckles close to BASE_LEVEL
+const HIGHLIGHT_CLAMP = 0.55;  // hard cap — no pixel exceeds ~140/255 pre-gamma
+const GAMMA           = 1.6;   // compresses highlights; effective max ~0.38
+const OPACITY         = 0.05;
+const FPS             = 20;
+const GRAIN_SIZE      = 1;     // 1 = per-CSS-pixel; raise for coarser grain
 
 export function NoiseOverlay() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -31,8 +46,6 @@ export function NoiseOverlay() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // imageSmoothingEnabled is true by default — leave it so bilinear
-    // interpolation softens the grain when GRAIN_SIZE > 1.
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -43,9 +56,6 @@ export function NoiseOverlay() {
     const interval = 1000 / FPS;
 
     function resize() {
-      // Internal canvas resolution = screen CSS pixels / GRAIN_SIZE.
-      // CSS keeps the canvas at 100vw×100vh, so the browser upscales
-      // with bilinear smoothing — no chunky blocky pixels.
       canvas!.width  = Math.ceil(window.innerWidth  / GRAIN_SIZE);
       canvas!.height = Math.ceil(window.innerHeight / GRAIN_SIZE);
     }
@@ -63,14 +73,23 @@ export function NoiseOverlay() {
       const data = imageData.data;
 
       for (let i = 0; i < data.length; i += 4) {
-        // Bell-curve approximation: average 3 uniforms → values cluster
-        // around mid-gray, rarely touching pure white or pure black.
+        // Bell-curve approx: average 3 uniforms → values cluster near center
         const r = (Math.random() + Math.random() + Math.random()) / 3;
-        const v = (128 + (r - 0.5) * CONTRAST * 3) | 0;
-        data[i]     = v;   // R
-        data[i + 1] = v;   // G
-        data[i + 2] = v;   // B
-        data[i + 3] = 255; // A — full; transparency comes from CSS opacity
+
+        // Shift distribution around BASE_LEVEL
+        let v = BASE_LEVEL + (r - 0.5) * AMPLITUDE * 2;
+
+        // Hard-clamp highlights so no near-white pixels survive
+        v = Math.min(v, HIGHLIGHT_CLAMP);
+
+        // Gamma curve (>1) compresses the upper range further toward dark
+        v = Math.pow(Math.max(0, v), GAMMA);
+
+        const byte = (v * 255) | 0;
+        data[i]     = byte;
+        data[i + 1] = byte;
+        data[i + 2] = byte;
+        data[i + 3] = 255; // full alpha — transparency via layer opacity only
       }
 
       ctx!.putImageData(imageData, 0, 0);
