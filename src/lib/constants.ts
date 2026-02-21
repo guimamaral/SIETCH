@@ -18,6 +18,7 @@ export const SITE_CONFIG = {
   },
 
   location: process.env.NEXT_PUBLIC_LOCATION ?? '',
+  currentlyReading: process.env.NEXT_PUBLIC_CURRENTLY_READING ?? '',
 };
 
 // Local storage keys
