@@ -5,7 +5,6 @@ import { PageHeader } from '@/components/PageHeader';
 import { NavStrip } from '@/components/NavStrip';
 import { PageViewport } from '@/components/PageViewport';
 import { Footer } from '@/components/Footer';
-import { NoiseOverlay } from '@/components/NoiseOverlay';
 import { BlogPostMeta, YouTubeVideo } from '@/types';
 import styles from './SiteShell.module.css';
 
@@ -20,7 +19,6 @@ export function SiteShell({ posts = [], videos = [] }: SiteShellProps) {
 
   return (
     <div className={styles.shell}>
-      <NoiseOverlay />
       <div className={styles.container}>
         <PageHeader />
         <NavStrip />

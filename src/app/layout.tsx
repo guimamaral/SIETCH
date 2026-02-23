@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { NavigationProvider } from '@/context/NavigationContext';
 import { SITE_CONFIG } from '@/lib/constants';
+import { NoiseOverlay } from '@/components/NoiseOverlay';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <NavigationProvider>
+            <NoiseOverlay />
             {children}
           </NavigationProvider>
         </ThemeProvider>
