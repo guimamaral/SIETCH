@@ -52,6 +52,7 @@
   --color-accent: #0066cc;
   --color-accent-hover: #0052a3;
   --color-border: #e0e0e0;
+  --noise-opacity: 0.25;
 }
 
 /* ─── Dark Theme ─── */
@@ -64,6 +65,7 @@
   --color-accent: #66b3ff;
   --color-accent-hover: #99ccff;
   --color-border: #333333;
+  --noise-opacity: 0.05;
 }
 
 /* ─── Reduced Motion ─── */

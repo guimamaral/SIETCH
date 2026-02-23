@@ -24,9 +24,9 @@ import styles from './NoiseOverlay.module.css';
 //                  the top end (e.g. 1.5 turns 0.55 → 0.40 effective).
 //                  → To reduce whites more aggressively: raise this value.
 //
-// OPACITY          Layer-level CSS transparency (0.0–1.0).
-//                  Prefer tuning brightness first; use this for final trim.
-//                  → To reduce overall visibility: lower this value.
+// OPACITY          Controlled via --noise-opacity CSS variable in globals.css.
+//                  Light theme: 0.12 (dark specks need more presence on white).
+//                  Dark theme:  0.05 (subtle lighter specks on dark).
 //
 // FPS              Animation framerate. 18–24 = smooth; 8–12 = choppy/CRT.
 //
@@ -35,7 +35,6 @@ const BASE_LEVEL      = 0.35;  // darker baseline — bias away from white
 const AMPLITUDE       = 0.15;  // low swing; keeps speckles close to BASE_LEVEL
 const HIGHLIGHT_CLAMP = 0.55;  // hard cap — no pixel exceeds ~140/255 pre-gamma
 const GAMMA           = 1.6;   // compresses highlights; effective max ~0.38
-const OPACITY         = 0.05;
 const FPS             = 20;
 const GRAIN_SIZE      = 2;     // 2 = half-res canvas; 4× fewer pixel ops
 
@@ -120,7 +119,6 @@ export function NoiseOverlay() {
     <canvas
       ref={canvasRef}
       className={styles.noise}
-      style={{ opacity: OPACITY }}
     />
   );
 }
