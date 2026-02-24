@@ -68,6 +68,16 @@
   --noise-opacity: 0.05;
 }
 
+/* Light theme: invert dark-gray noise so it reads as subtle dark speckles on white */
+[data-noise-overlay] {
+  filter: invert(1);
+}
+
+/* Dark theme: noise canvas renders dark grays natively — no inversion needed */
+[data-theme='dark'] [data-noise-overlay] {
+  filter: none;
+}
+
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   :root {

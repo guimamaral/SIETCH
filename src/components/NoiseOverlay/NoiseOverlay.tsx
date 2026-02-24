@@ -119,6 +119,7 @@ export function NoiseOverlay() {
     <canvas
       ref={canvasRef}
       className={styles.noise}
+      data-noise-overlay
     />
   );
 }
