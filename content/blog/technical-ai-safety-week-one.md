@@ -15,7 +15,7 @@ The second success threshold is that frontier AI labs accept the race and push h
 
 The third success threshold and my personal favorite is to simply not build ASI-like systems. In my view, it is impossible that humans can effectively control systems/beings that are smarter than us. It's like trying to draw in a catfish using a pencil, it just doesn't make sense. I am in favor of indefinite moratoriums on frontier AI development until we can with 100% clarity make them safe for humanity. 
 
-Irrespective of what outcome you most desire, it is a known fact that building AI safely is HARD. I learned that we're experimenting with systems we DO NOT understand, our goals we specify have flaws we DO NOT foresee, and AIs pursue goals in ways we don't expect. There are terms for the last two, namely reward misspecification and goal misgeneralization. 
+Irrespective of what outcome you most desire, it is a known fact that building AI safely is HARD. I learned that we're experimenting with systems we DO NOT understand, the goals we specify have flaws we DO NOT foresee, and AIs pursue goals in ways we don't expect. There are terms for the last two, namely reward misspecification and goal misgeneralization. 
 
 I also learned that I have no idea what the difference between model understanding and model interpretability is, and which one is more important (and in what scenarios?). 
 
