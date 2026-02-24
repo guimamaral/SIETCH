@@ -1,8 +1,8 @@
 ---
 title: "Bluedot Impact Technical AI Safety Course Reflection: Week One"
 date: "2026-02-17"
-description: "A foray into the technical challenge with AI"
-tags: ["Reflection", "AI", "AI Safety", "Technical"]
+description: "A foray into the technical challenges with building AI safely."
+tags: ["Reflection", "AI", "AI Safety", "Technical", "Interpretability"]
 ---
 
 Happy Tuesday! I wanted to reflect and talk about my experience as a participant in Bluedot Impact's Technical AI Safety Course, specifically week one. 

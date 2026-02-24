@@ -36,10 +36,6 @@ export function BlogPage({ posts = [] }: BlogPageProps) {
         </ul>
       )}
 
-      <div className={styles.quoteSection}>
-        <span className={styles.quoteText}>&quot;There is probably no more terrible instant of enlightenment than the one in which you discover your father is a man - with human flesh.&quot;</span>
-        <span className={styles.quoteAttribution}>— Princess Irulan</span>
-      </div>
     </section>
   );
 }
