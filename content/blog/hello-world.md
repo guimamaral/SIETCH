@@ -12,5 +12,3 @@ Welcome to my blog! This is the first post on my new minimalist personal site. I
 P.S: There's an easter egg :)
 
 ---
-
-*A quote will go here one day*
