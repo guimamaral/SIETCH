@@ -40,6 +40,33 @@
   letter-spacing: var(--letter-spacing-wide);
 }
 
+.crashDump {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.crashSignal {
+  color: #f87171;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.crashRegs {
+  margin: var(--space-1) 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-muted);
+  line-height: var(--line-height-base);
+}
+
+.crashFault {
+  color: #f87171;
+  opacity: 0.75;
+}
+
 /* ─── Landing Page ─── */
 .landing {
   display: flex;
