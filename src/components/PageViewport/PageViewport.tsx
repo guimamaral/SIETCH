@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigation } from '@/hooks';
 import { PAGES } from '@/lib/pages';
 import { NullPage } from '@/pages-content/NullPage';
+import { WormSign } from '@/components/WormSign/WormSign';
 import { BlogPostMeta, YouTubeVideo } from '@/types';
 import styles from './PageViewport.module.css';
 
@@ -17,6 +18,7 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
   const [displayIndex, setDisplayIndex] = useState(currentIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const prevIndexRef = useRef(currentIndex);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (currentIndex !== prevIndexRef.current) {
@@ -33,6 +35,14 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
     }
   }, [currentIndex]);
 
+  // Reset scroll to top on page change and notify WormSign
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollTop = 0;
+    el.dispatchEvent(new Event('scroll'));
+  }, [displayIndex, nullptrActive]);
+
   const CurrentPage = PAGES[displayIndex].component;
 
   return (
@@ -40,7 +50,12 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
       className={`${styles.viewport} ${isTransitioning ? styles.transitioning : ''}`}
       role="main"
     >
-      <div className={`${styles.scrollContainer} scroll-container`}>
+      <WormSign />
+      <div
+        ref={scrollRef}
+        className={`${styles.scrollContainer} scroll-container`}
+        data-worm-scroll
+      >
         {nullptrActive ? <NullPage /> : <CurrentPage posts={posts} videos={videos} />}
       </div>
 
