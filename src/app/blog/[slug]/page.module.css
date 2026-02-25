@@ -4,6 +4,11 @@
   overflow-y: auto;
   background-color: var(--color-bg);
   color: var(--color-fg);
+  scrollbar-width: none;       /* Firefox */
+}
+
+.blogPost::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari */
 }
 
 .container {

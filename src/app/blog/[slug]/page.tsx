@@ -4,6 +4,7 @@ import Link from 'next/link';
 import DOMPurify from 'isomorphic-dompurify';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog';
 import { formatDate } from '@/lib/format';
+import { WormSign } from '@/components/WormSign/WormSign';
 import styles from './page.module.css';
 
 interface BlogPostPageProps {
@@ -42,7 +43,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <main className={styles.blogPost}>
+    <main className={styles.blogPost} data-worm-scroll>
+      <WormSign />
       <div className={styles.container}>
         <nav className={styles.backNav}>
           <Link href="/#0x06" className={styles.backLink}>

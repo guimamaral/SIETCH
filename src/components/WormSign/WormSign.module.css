@@ -1,0 +1,27 @@
+.track {
+  position: fixed;
+  top: 40px;
+  bottom: 40px;
+  right: 16px;
+  width: 1px;
+  background: var(--color-border);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.worm {
+  position: fixed;
+  right: 5px; /* centers 22px worm on 1px track at right: 16px */
+  pointer-events: none;
+  z-index: 11;
+  color: var(--color-fg-muted);
+  transition: top 0.1s linear;
+}
+
+/* Hide on narrow viewports where the track would overlap content */
+@media (max-width: 480px) {
+  .track,
+  .worm {
+    display: none;
+  }
+}
