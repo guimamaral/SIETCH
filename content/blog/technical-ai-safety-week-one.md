@@ -20,3 +20,9 @@ Irrespective of what outcome you most desire, it is a known fact that building A
 I also learned that I have no idea what the difference between model understanding and model interpretability is, and which one is more important (and in what scenarios?). 
 
 I don't think AI Safety researchers know either...
+
+---
+
+![Technical AI Safety Week One](/technical-ai-safety-week-one.png)
+
+*Courtesy of ChatGPT 5.2 Thinking*

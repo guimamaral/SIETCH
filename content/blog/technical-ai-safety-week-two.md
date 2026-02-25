@@ -23,4 +23,10 @@ If we do not address these two questions then models will develop dangerous beha
 One technique we can use to address scalable oversight is deliberative alignment. 
 Deliberative alignment (similar to Constitutional AI) is an AI safety technique that enables models to reason about a hierarchical safety specification before responding to user queries. This decreases the incidence of scheming in the model. However it has a big problem. Namely, just because we are getting "safer" responses from the model doesn't mean we are getting them for the right reason. Meaning, the model could ACTUALLY be getting "safer" OR it could simply be getting better at hiding its scheming. This concern compounds when considering that model CoT may not always be faithful. 
 
-Overall, it is obvious that AI Safety is an extremely difficult problem-space (perhaps the most difficult humans have ever attempted to conquer). To me, it is akin to mountaineering the tallest peak in the known universe without a rope. Maybe conquering AI Safety will be Alex Honnold's next feat? 
+Overall, it is obvious that AI Safety is an extremely difficult problem-space (perhaps the most difficult humans have ever attempted to conquer). To me, it is akin to mountaineering the tallest peak in the known universe without a rope. Maybe conquering AI Safety will be Alex Honnold's next feat?
+
+---
+
+![Technical AI Safety Week Two](/technical-ai-safety-week-two.png)
+
+*Courtesy of ChatGPT 5.2 Thinking*

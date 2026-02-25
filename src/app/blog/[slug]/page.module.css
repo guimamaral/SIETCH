@@ -165,6 +165,14 @@
   margin: var(--space-8) 0;
 }
 
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: var(--space-4) 0 var(--space-2);
+  border-radius: 4px;
+}
+
 .content blockquote {
   border-left: 3px solid var(--color-border);
   padding-left: var(--space-4);
