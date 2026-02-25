@@ -18,11 +18,21 @@ export function NavStrip() {
     }
   }
 
-  const displayTitle = PAGES[hoveredIndex ?? currentIndex].title;
+  const displayPage = PAGES[hoveredIndex ?? currentIndex];
 
   return (
     <nav className={styles.nav} aria-label="Page navigation">
-      <div className={styles.navHint}>{displayTitle}</div>
+      <div className={styles.navHint}>
+        <span>{displayPage.title}</span>
+        {hoveredIndex !== null && (
+          <span
+            className={styles.processState}
+            data-state={displayPage.processState}
+          >
+            {displayPage.processState}
+          </span>
+        )}
+      </div>
       <ul className={styles.navList}>
         {PAGES.map((page, index) => (
           <li key={page.key}>

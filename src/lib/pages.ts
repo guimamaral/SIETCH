@@ -18,17 +18,17 @@ import {
  * The array order defines the navigation order.
  */
 export const PAGES: PageConfig[] = [
-  { key: 'landing', title: 'LANDING', component: LandingPage },
-  { key: 'purpose', title: 'PURPOSE', component: PurposePage },
-  { key: 'work', title: 'EXPERIENCE', component: ExperiencePage },
-  { key: 'projects', title: 'PROJECTS', component: ProjectsPage },
-  { key: 'skills', title: 'SKILLS', component: SkillsPage },
-  { key: 'tutoring', title: 'TUTORING', component: TutoringPage },
-  { key: 'blog', title: 'BLOG', component: BlogPage },
-  { key: 'reviews', title: 'REVIEWS', component: ReviewsPage },
-  { key: 'youtube', title: 'YOUTUBE', component: YouTubePage },
-  { key: 'resume', title: 'RESUME', component: ResumePage },
-  { key: 'contact', title: 'CONTACT', component: ContactPage },
+  { key: 'landing',  title: 'LANDING',    component: LandingPage,    processState: 'RUNNING'  },
+  { key: 'purpose',  title: 'PURPOSE',    component: PurposePage,    processState: 'RUNNING'  },
+  { key: 'work',     title: 'EXPERIENCE', component: ExperiencePage, processState: 'SLEEPING' },
+  { key: 'projects', title: 'PROJECTS',   component: ProjectsPage,   processState: 'SLEEPING' },
+  { key: 'skills',   title: 'SKILLS',     component: SkillsPage,     processState: 'RUNNING'  },
+  { key: 'tutoring', title: 'TUTORING',   component: TutoringPage,   processState: 'WAITING'  },
+  { key: 'blog',     title: 'BLOG',       component: BlogPage,       processState: 'SLEEPING' },
+  { key: 'reviews',  title: 'REVIEWS',    component: ReviewsPage,    processState: 'IDLE'     },
+  { key: 'youtube',  title: 'YOUTUBE',    component: YouTubePage,    processState: 'DAEMON'   },
+  { key: 'resume',   title: 'RESUME',     component: ResumePage,     processState: 'STOPPED'  },
+  { key: 'contact',  title: 'CONTACT',    component: ContactPage,    processState: 'WAITING'  },
 ];
 
 export const TOTAL_PAGES = PAGES.length;

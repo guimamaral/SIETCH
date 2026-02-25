@@ -4,6 +4,9 @@
 }
 
 .navHint {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
   font-size: var(--font-size-xs);
   font-family: var(--font-mono);
   letter-spacing: var(--letter-spacing-wider);
@@ -12,6 +15,20 @@
   padding-bottom: var(--space-2);
   min-height: calc(var(--font-size-xs) * var(--line-height-base) + var(--space-2));
 }
+
+.processState {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.processState[data-state='RUNNING']  { color: #4ade80; }
+.processState[data-state='SLEEPING'] { color: #60a5fa; }
+.processState[data-state='WAITING']  { color: #fbbf24; }
+.processState[data-state='STOPPED']  { color: #f87171; }
+.processState[data-state='IDLE']     { color: var(--color-fg-subtle); }
+.processState[data-state='ZOMBIE']   { color: #f87171; opacity: 0.6; }
+.processState[data-state='DAEMON']   { color: #a78bfa; }
 
 .navList {
   display: flex;

@@ -1,9 +1,19 @@
 import { ComponentType } from 'react';
 
+export type ProcessState =
+  | 'RUNNING'
+  | 'SLEEPING'
+  | 'WAITING'
+  | 'STOPPED'
+  | 'IDLE'
+  | 'ZOMBIE'
+  | 'DAEMON';
+
 export interface PageConfig {
   key: string;
   title: string;
   component: ComponentType<PageProps>;
+  processState: ProcessState;
 }
 
 export interface PageProps {
