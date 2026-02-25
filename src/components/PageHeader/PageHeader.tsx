@@ -13,10 +13,6 @@ function getBatteryLevel(date: Date): number {
   return 1 - minutesSinceMidnight / (24 * 60);
 }
 
-function renderBattery(level: number): string {
-  const filled = Math.round(level * SEGMENTS);
-  return '[' + '\u2588'.repeat(filled) + '\u2591'.repeat(SEGMENTS - filled) + ']';
-}
 
 function formatTime(date: Date): string {
   const h = String(date.getHours()).padStart(2, '0');
@@ -35,10 +31,17 @@ function StillsuitBattery() {
 
   if (!now) return null;
 
+  const filled = Math.round(getBatteryLevel(now) * SEGMENTS);
+  const blocks = '\u2588'.repeat(filled) + '\u2591'.repeat(SEGMENTS - filled);
+
   return (
     <div className={styles.stillsuit}>
       <span className={styles.stillsuitTime}>{formatTime(now)}</span>
-      <span className={styles.stillsuitBattery}>{renderBattery(getBatteryLevel(now))}</span>
+      <span className={styles.stillsuitBattery}>
+        <span className={styles.batteryBracket}>[</span>
+        {blocks}
+        <span className={styles.batteryBracket}>]</span>
+      </span>
     </div>
   );
 }

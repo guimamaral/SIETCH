@@ -49,3 +49,7 @@
   color: var(--color-fg-muted);
   letter-spacing: 0;
 }
+
+.batteryBracket {
+  vertical-align: top;
+}
