@@ -202,6 +202,16 @@ button:focus-visible {
   scrollbar-color: var(--color-border) transparent;
 }
 
+/* Blog post hex divider — injected via HTML string replacement (not CSS Module) */
+.blog-hex-divider {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--color-fg-subtle);
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin: 2rem 0;
+}
+
 .scroll-container::-webkit-scrollbar {
   width: 6px;
 }

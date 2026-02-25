@@ -69,6 +69,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </header>
 
+          <div className={styles.hexDivider}>─── 0xCAFEBABE ───</div>
+
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{
@@ -82,7 +84,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   'table', 'thead', 'tbody', 'tr', 'th', 'td',
                 ],
                 ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class'],
-              })
+              }).replace(/<hr\s*\/?>/gi, '<div class="blog-hex-divider">─── 0xCAFEBABE ───</div>')
             }}
           />
         </article>
