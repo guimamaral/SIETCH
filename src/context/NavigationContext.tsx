@@ -19,39 +19,39 @@ interface NavigationProviderProps {
   initialIndex?: number;
 }
 
+function getIndexFromHash(fallback: number): number {
+  if (typeof window === 'undefined') return fallback;
+  const hash = window.location.hash.slice(1);
+  if (!hash) return fallback;
+  const index = fromHex(hash);
+  if (index !== null && index >= 0 && index < TOTAL_PAGES) return index;
+  return fallback;
+}
+
 export function NavigationProvider({ children, initialIndex = 0 }: NavigationProviderProps) {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [currentIndex, setCurrentIndex] = useState(() => getIndexFromHash(initialIndex));
   const [nullptrActive, setNullptrActive] = useState(false);
 
-  // Parse hash on mount and handle browser navigation
+  // Set initial hash if missing, and handle browser back/forward
   useEffect(() => {
-    function parseHashAndNavigate() {
-      const hash = window.location.hash.slice(1); // Remove '#'
+    if (!window.location.hash) {
+      window.history.replaceState(null, '', `#${toHex(currentIndex)}`);
+    }
 
-      if (!hash) {
-        // No hash, update URL to current index
-        window.history.replaceState(null, '', `#${toHex(initialIndex)}`);
-        return;
-      }
-
+    function onHashChange() {
+      const hash = window.location.hash.slice(1);
       const index = fromHex(hash);
-
       if (index !== null && index >= 0 && index < TOTAL_PAGES) {
         setCurrentIndex(index);
       } else {
-        // Invalid hash, reset to first page
         setCurrentIndex(0);
         window.history.replaceState(null, '', `#${toHex(0)}`);
       }
     }
 
-    // Parse on mount
-    parseHashAndNavigate();
-
-    // Handle browser back/forward
-    window.addEventListener('hashchange', parseHashAndNavigate);
-    return () => window.removeEventListener('hashchange', parseHashAndNavigate);
-  }, [initialIndex]);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, [currentIndex]);
 
   // Update hash when index changes (but not on initial mount)
   useEffect(() => {
