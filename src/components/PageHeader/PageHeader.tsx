@@ -8,6 +8,27 @@ import styles from './PageHeader.module.css';
 
 const SEGMENTS = 8;
 
+function randomHex32(): string {
+  return Math.floor(Math.random() * 0x100000000).toString(16).padStart(8, '0');
+}
+
+function StackCanary() {
+  const [canary, setCanary] = useState<string | null>(null);
+
+  useEffect(() => {
+    setCanary('00007fff' + randomHex32());
+  }, []);
+
+  if (!canary) return null;
+
+  return (
+    <div className={styles.canary}>
+      <span className={styles.canaryLabel}>CANARY</span>
+      <span className={styles.canaryValue}>0x{canary}</span>
+    </div>
+  );
+}
+
 function getBatteryLevel(date: Date): number {
   const minutesSinceMidnight = date.getHours() * 60 + date.getMinutes();
   return 1 - minutesSinceMidnight / (24 * 60);
@@ -52,12 +73,15 @@ export function PageHeader() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.pageIndicator}>
-        <span className={styles.hexIndex}>
-          {toHex(currentIndex)}
-        </span>
-        <span className={styles.separator}>—</span>
-        <span className={styles.pageTitle}>{currentPage.title}</span>
+      <div className={styles.headerLeft}>
+        <div className={styles.pageIndicator}>
+          <span className={styles.hexIndex}>
+            {toHex(currentIndex)}
+          </span>
+          <span className={styles.separator}>—</span>
+          <span className={styles.pageTitle}>{currentPage.title}</span>
+        </div>
+        <StackCanary key={currentIndex} />
       </div>
       <StillsuitBattery />
     </header>
