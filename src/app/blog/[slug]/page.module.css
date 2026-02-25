@@ -46,8 +46,18 @@
 
 .header {
   margin-bottom: var(--space-8);
-  padding-bottom: var(--space-6);
-  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.header::after {
+  content: '\2500\2500\2500 0xCAFEBABE \2500\2500\2500';
+  display: block;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-top: var(--space-6);
 }
 
 .date {
@@ -166,8 +176,18 @@
 
 .content hr {
   border: none;
-  border-top: 1px solid var(--color-border);
   margin: var(--space-8) 0;
+  text-align: center;
+  overflow: visible;
+}
+
+.content hr::before {
+  content: '\2500\2500\2500 0xCAFEBABE \2500\2500\2500';
+  display: inline;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .content img {

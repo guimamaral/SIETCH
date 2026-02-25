@@ -74,6 +74,11 @@
   letter-spacing: var(--letter-spacing-wide);
 }
 
+.hexSignature {
+  font-family: var(--font-mono);
+  color: var(--color-fg-muted);
+}
+
 .disclaimer {
   font-size: var(--font-size-xs);
   color: var(--color-fg-subtle);

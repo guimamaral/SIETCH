@@ -59,7 +59,8 @@ export function Footer() {
       </div>
 
       <div className={styles.copyright}>
-        © {new Date().getFullYear()} GUILHERME AMARAL. ALL RIGHTS RESERVED.
+        <span className={styles.hexSignature}>0xDEADBEEF</span>
+        {' · '}© {new Date().getFullYear()} GUILHERME AMARAL. ALL RIGHTS RESERVED.
       </div>
 
       <div className={styles.disclaimer}>
