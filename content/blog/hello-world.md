@@ -10,3 +10,7 @@ tags: ["Introduction"]
 Welcome to my blog! This is the first post on my new minimalist personal site. The theme of my website is a blend of Dune, computer architecture, computer security, and operating systems. 
 
 P.S: There's an easter egg :)
+
+![Hello World](/hello-world.png)
+
+*Courtesy of ChatGPT 5.2 Thinking*
