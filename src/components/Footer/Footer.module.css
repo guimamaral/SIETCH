@@ -11,7 +11,7 @@
 /* ─── SOS Logo (easter egg) ─── */
 .sosWrap {
   position: absolute;
-  bottom: 0;
+  bottom: var(--space-6);
   right: 0;
   text-decoration: none;
   opacity: 0.12;
