@@ -66,6 +66,22 @@ export function Footer() {
       <div className={styles.disclaimer}>
         Disclaimer: All content and opinions expressed here are solely my own.
       </div>
+
+      <a
+        href="https://souloversilicon.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.sosWrap}
+        aria-label="Soul Over Silicon"
+      >
+        <div className={styles.sosFrame}>
+          <span className={styles.sosInner}>SOS</span>
+          <div className={styles.sosCorner + ' ' + styles.cornerTl} />
+          <div className={styles.sosCorner + ' ' + styles.cornerTr} />
+          <div className={styles.sosCorner + ' ' + styles.cornerBl} />
+          <div className={styles.sosCorner + ' ' + styles.cornerBr} />
+        </div>
+      </a>
     </footer>
   );
 }
