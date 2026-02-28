@@ -18,12 +18,9 @@ export function ContactPage() {
         </p>
 
         <div className={styles.contactLinks}>
-          <a
-            href={`mailto:${SITE_CONFIG.social.email}`}
-            className={styles.contactLink}
-          >
+          <span className={styles.contactLink}>
             {SITE_CONFIG.social.email}
-          </a>
+          </span>
 
           <div className={styles.socialLinks}>
             <a
