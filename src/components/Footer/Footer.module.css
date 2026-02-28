@@ -27,35 +27,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
+  width: 70px;
+  height: 70px;
   border: 1px solid var(--color-border);
 }
 
 .sosFrame::before {
   content: '';
   position: absolute;
-  inset: 6px;
+  inset: 3px;
   border: 1px solid var(--color-border);
 }
 
 .sosInner {
   font-family: var(--font-mono);
-  font-size: 3.5rem;
+  font-size: 1.75rem;
   letter-spacing: 0.15em;
   color: var(--color-fg);
 }
 
 .sosCorner {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 6px;
+  height: 6px;
 }
 
-.cornerTl { top: -1px; left: -1px; border-top: 2px solid var(--color-fg); border-left: 2px solid var(--color-fg); }
-.cornerTr { top: -1px; right: -1px; border-top: 2px solid var(--color-fg); border-right: 2px solid var(--color-fg); }
-.cornerBl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--color-fg); border-left: 2px solid var(--color-fg); }
-.cornerBr { bottom: -1px; right: -1px; border-bottom: 2px solid var(--color-fg); border-right: 2px solid var(--color-fg); }
+.cornerTl { top: -1px; left: -1px; border-top: 1px solid var(--color-fg); border-left: 1px solid var(--color-fg); }
+.cornerTr { top: -1px; right: -1px; border-top: 1px solid var(--color-fg); border-right: 1px solid var(--color-fg); }
+.cornerBl { bottom: -1px; left: -1px; border-bottom: 1px solid var(--color-fg); border-left: 1px solid var(--color-fg); }
+.cornerBr { bottom: -1px; right: -1px; border-bottom: 1px solid var(--color-fg); border-right: 1px solid var(--color-fg); }
 
 .hints {
   display: flex;
