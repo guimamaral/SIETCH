@@ -15,6 +15,7 @@ export const SITE_CONFIG = {
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? '',
     wyzant: process.env.NEXT_PUBLIC_WYZANT_URL ?? '',
     spotify: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? '',
+    sos: process.env.NEXT_PUBLIC_SOS_URL ?? '',
   },
 
   location: process.env.NEXT_PUBLIC_LOCATION ?? '',
