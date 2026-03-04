@@ -60,6 +60,21 @@
   vertical-align: top;
 }
 
+.pdoom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.pdoomValue {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  color: var(--color-fg-subtle);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .canary {
   display: flex;
   align-items: baseline;

@@ -67,6 +67,27 @@ function StillsuitBattery() {
   );
 }
 
+const PDOOM_ENTRIES = [
+  'p(doom) = 12.%',
+  'p(doom) (optimism) = 1.0%',
+  'p(doom) (pessimism) = 28.9%',
+];
+
+function PDoom() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex(i => (i + 1) % PDOOM_ENTRIES.length), 7000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className={styles.pdoom}>
+      <span className={styles.pdoomValue}>{PDOOM_ENTRIES[index]}</span>
+    </div>
+  );
+}
+
 export function PageHeader() {
   const { currentIndex } = useNavigation();
   const currentPage = PAGES[currentIndex];
@@ -83,6 +104,7 @@ export function PageHeader() {
         </div>
         <StackCanary key={currentIndex} />
       </div>
+      <PDoom />
       <StillsuitBattery />
     </header>
   );
