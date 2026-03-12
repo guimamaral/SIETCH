@@ -68,9 +68,9 @@ function StillsuitBattery() {
 }
 
 const PDOOM_ENTRIES = [
-  'p(doom) = 12.%',
-  'p(doom) (optimism) = 1.0%',
-  'p(doom) (pessimism) = 28.9%',
+  'p(doom) = 12.0%',
+  'p(doom) * (optimism) = 1.0%',
+  'p(doom) * (pessimism) = 28.9%',
 ];
 
 function PDoom() {
