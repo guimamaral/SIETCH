@@ -12,6 +12,7 @@ export const SITE_CONFIG = {
     email: process.env.NEXT_PUBLIC_EMAIL ?? '',
     github: process.env.NEXT_PUBLIC_GITHUB_URL ?? '',
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? '',
+    x: process.env.NEXT_PUBLIC_X_URL ?? '',
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL ?? '',
     wyzant: process.env.NEXT_PUBLIC_WYZANT_URL ?? '',
     spotify: process.env.NEXT_PUBLIC_SPOTIFY_URL ?? '',
