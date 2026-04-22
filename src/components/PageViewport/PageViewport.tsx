@@ -18,10 +18,21 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
   const [displayIndex, setDisplayIndex] = useState(currentIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const prevIndexRef = useRef(currentIndex);
+  const prevNullRef = useRef(nullptrActive);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (currentIndex !== prevIndexRef.current) {
+      const leavingNull = prevNullRef.current;
+      prevNullRef.current = nullptrActive;
+      prevIndexRef.current = currentIndex;
+
+      if (leavingNull) {
+        // Skip transition when leaving NullPage to avoid flashing landing
+        setDisplayIndex(currentIndex);
+        return;
+      }
+
       setIsTransitioning(true);
 
       // Wait for fade out, then switch content
@@ -30,10 +41,10 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
         setIsTransitioning(false);
       }, 150); // Half of transition duration
 
-      prevIndexRef.current = currentIndex;
       return () => clearTimeout(timer);
     }
-  }, [currentIndex]);
+    prevNullRef.current = nullptrActive;
+  }, [currentIndex, nullptrActive]);
 
   // Reset scroll to top on page change and notify WormSign
   useEffect(() => {
