@@ -30,6 +30,7 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
       if (leavingNull) {
         // Skip transition when leaving NullPage to avoid flashing landing
         setDisplayIndex(currentIndex);
+        setIsTransitioning(false);
         return;
       }
 
@@ -42,6 +43,12 @@ export function PageViewport({ posts = [], videos = [] }: PageViewportProps) {
       }, 150); // Half of transition duration
 
       return () => clearTimeout(timer);
+    }
+
+    // Entering null mode may have cancelled an in-flight transition timer;
+    // reset so the viewport doesn't stay at opacity 0
+    if (nullptrActive) {
+      setIsTransitioning(false);
     }
     prevNullRef.current = nullptrActive;
   }, [currentIndex, nullptrActive]);
