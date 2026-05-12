@@ -614,36 +614,268 @@
   }
 }
 
-/* ─── Resume ─── */
-.resumeContent {
+/* ─── Resume (/proc/self/resume) ─── */
+
+.bootLog {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-8);
+  color: var(--color-fg-muted);
 }
 
-.resumeEmbed {
-  width: 100%;
-  height: 70vh;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
+.bootLine {
+  white-space: pre-wrap;
 }
 
-.resumeDownload {
-  display: inline-block;
-  align-self: flex-start;
-  padding: var(--space-2) var(--space-4);
+.bootTimestamp {
+  color: var(--color-fg-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.bootOk {
+  color: #4ade80;
+  font-variant-numeric: tabular-nums;
+}
+
+.bootShell {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.procSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.procSummary {
+  color: var(--color-fg-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: 70ch;
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-border);
+}
+
+.procTable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
   font-size: var(--font-size-sm);
+}
+
+.procHead {
+  display: grid;
+  grid-template-columns: 4rem 6rem 10rem 1fr;
+  gap: var(--space-3);
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-subtle);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-fg);
-  border: 1px solid var(--color-fg);
-  text-decoration: none;
-  transition: all var(--transition-fast);
+  font-variant-numeric: tabular-nums;
+  padding-bottom: var(--space-1);
+  border-bottom: 1px dashed var(--color-border);
 }
 
-.resumeDownload:hover {
-  background: var(--color-fg);
-  color: var(--color-bg);
+.procEntry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.procRow {
+  display: grid;
+  grid-template-columns: 4rem 6rem 10rem 1fr;
+  gap: var(--space-3);
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+
+.procPid {
+  color: var(--color-fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.procState {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.procState[data-state='RUNNING']  { color: #4ade80; }
+.procState[data-state='SLEEPING'] { color: #60a5fa; }
+.procState[data-state='WAITING']  { color: #fbbf24; }
+.procState[data-state='STOPPED']  { color: #f87171; }
+.procState[data-state='IDLE']     { color: var(--color-fg-subtle); }
+.procState[data-state='ZOMBIE']   { color: #f87171; opacity: 0.6; }
+.procState[data-state='DAEMON']   { color: #a78bfa; }
+
+.procUptime {
+  color: var(--color-fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.procCommand {
+  color: var(--color-fg);
+  min-width: 0;
+}
+
+.procCmdName {
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+.procCmdDetail {
+  color: var(--color-fg-muted);
+}
+
+.procCmdSep {
+  white-space: pre;
+}
+
+.procBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.procBullets li {
+  position: relative;
+  padding-left: var(--space-4);
+  color: var(--color-fg-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-relaxed);
+}
+
+.procBullets li::before {
+  content: '└─';
+  position: absolute;
+  left: 0;
+  color: var(--color-fg-subtle);
+}
+
+@media (max-width: 639px) {
+  .procHead {
+    display: none;
+  }
+
+  .procRow {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      'pid state'
+      'uptime uptime'
+      'command command';
+    row-gap: var(--space-1);
+    column-gap: var(--space-3);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  .procPid { grid-area: pid; }
+  .procState { grid-area: state; justify-self: start; }
+  .procUptime { grid-area: uptime; }
+  .procCommand { grid-area: command; }
+
+  .procBullets {
+    margin-left: var(--space-3);
+  }
+}
+
+.cpuinfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.cpuinfoLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1);
+}
+
+.cpuinfoLabel {
+  color: var(--color-fg-muted);
+  letter-spacing: var(--letter-spacing-wide);
+  font-variant-numeric: tabular-nums;
+  min-width: 4rem;
+}
+
+.cpuinfoColon {
+  color: var(--color-fg-subtle);
+}
+
+.cpuinfoValues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.cpuinfoChip {
+  font-size: var(--font-size-xs);
+  padding: 2px var(--space-2);
+  background: var(--color-bg-alt);
+  color: var(--color-fg-muted);
+  border-radius: 2px;
+}
+
+.interestTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+}
+
+.interestTag {
+  font-size: var(--font-size-xs);
+  padding: 2px var(--space-2);
+  background: var(--color-bg-alt);
+  color: var(--color-fg-muted);
+  border-radius: 2px;
+}
+
+.downloadCmd {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+}
+
+.downloadCmdPath {
+  color: var(--color-fg);
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+  transition: color var(--transition-fast);
+}
+
+.downloadCmd:hover .downloadCmdPath,
+.downloadCmd:focus-visible .downloadCmdPath {
+  color: var(--color-accent);
+}
+
+.downloadCmd:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
 }
 
 /* ─── Reviews ─── */
