@@ -13,12 +13,12 @@ export function ResumePage() {
 
       <div className={styles.resumeContent}>
         <iframe
-          src="/Gui-Resume-LaTeX.pdf"
+          src="/Resume_LaTeX_Compute.pdf"
           className={styles.resumeEmbed}
           title="Resume"
         />
         <a
-          href="/Gui-Resume-LaTeX.pdf"
+          href="Resume_LaTeX_Compute.pdf"
           download
           className={styles.resumeDownload}
         >
