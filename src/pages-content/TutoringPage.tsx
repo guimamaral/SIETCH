@@ -171,6 +171,7 @@ export function TutoringPage() {
           <li>Systems Programming (ARM, RISC-V, x86, C/C++)</li>
           <li>Operating Systems (ARM, RISC-V, x86, C/C++)</li>
           <li>Computer Security (ARM, RISC-V, x86, C/C++)</li>
+          <li>AI-Skills (Python, Claude Code, Codex, NotebookLM, RAG)</li>
         </ul>
       </div>
 

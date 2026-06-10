@@ -19,9 +19,9 @@ export function LandingPage() {
             Aspiring John Connor
           </p>
           <div className={styles.heroIntro}>
-            <p><strong>Academically,</strong> I am a senior at the University of Texas at Austin studying computer science.</p>
-            <p><strong>Professionally,</strong> I am an incoming System Software Engineer at NVIDIA. I also tutor on the side.</p>
-            <p><strong>Fundamentally,</strong> I hate bullies and tyrants (with a passion).</p>
+            <p><strong>At work</strong> I am a System Software Engineer at NVIDIA working on virtualization and RTOS technologies for autonomous applications.</p>
+            <p><strong>In my free time</strong> I enjoy tutoring, building apps for games, and engaging with nature.</p>
+            <p><strong>When my mental state allows</strong> I also enjoy giving myself room to hate bullies and tyrants (with a passion).</p>
           </div>
         </div>
 

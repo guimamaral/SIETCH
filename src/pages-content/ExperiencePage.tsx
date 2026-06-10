@@ -10,6 +10,16 @@ interface WorkEntry {
 }
 
 const Experience: WorkEntry[] = [
+
+  {
+    role: 'Systems Software Engieer',
+    company: 'NVIDIA Corporation',
+    dates: 'July 2026',
+    bullets: [
+      'RTOS & Hypervisor for Autonomous Applications'
+    ],
+  },
+
   {
     role: 'Technical AI Safety Fellow',
     company: 'Bluedot Impact',
@@ -19,16 +29,6 @@ const Experience: WorkEntry[] = [
     ],
   },
 
-  {
-    role: 'Systems Software Engieer',
-    company: 'NVIDIA Corporation',
-    dates: 'July 2026',
-    bullets: [
-      'Incoming :)',
-      'RTOS & Hypervisor for Autonomous Vehicles'
-    ],
-  },
-  
   {
     role: 'Private Tutor',
     company: 'N/A',
@@ -42,7 +42,7 @@ const Experience: WorkEntry[] = [
     company: 'NVIDIA Corporation',
     dates: 'May 2025 – August 2025',
     bullets: [
-      'RTOS & Hypervisor for Autonomous Vehicles'
+      'RTOS & Hypervisor for Autonomous Applications'
     ],
   },
   {
@@ -50,7 +50,7 @@ const Experience: WorkEntry[] = [
     company: 'NVIDIA Corporation',
     dates: 'May 2024 – August 2024',
     bullets: [
-      'RTOS & Hypervisor for Autonomous Vehicles',
+      'RTOS & Hypervisor for Autonomous Applications',
     ],
   },
   {

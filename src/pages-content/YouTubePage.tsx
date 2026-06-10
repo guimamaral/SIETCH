@@ -19,7 +19,7 @@ export function YouTubePage({ videos = [] }: YouTubePageProps) {
       <h2 className={styles.sectionTitle}>YOUTUBE</h2>
 
       <div className={styles.youtubeChannel}>
-        <h3 className={styles.subsectionTitle}>SingularitySurvival</h3>
+        <h3 className={styles.subsectionTitle}>DoomerDiaries</h3>
         <a
           href={CHANNEL_URL}
           target="_blank"

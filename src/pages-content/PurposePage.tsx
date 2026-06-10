@@ -32,8 +32,9 @@ export function PurposePage() {
       <div className={styles.subsection}>
         <h3 className={styles.subsectionTitle}>Now</h3>
         <p className={styles.paragraph}>
-          Currently focused on building a monolithic kernel using Rust/C++ 
-          for the AArch64 architecture targeted at a Raspberry Pi 4b.
+          Currently, I am focused on learning as much as I can about the technical, strategic, and ethical challenges 
+          that arise when living in a world caught in the technological Singularity. My hope is that I can build great resilience for myself
+          and my loved ones by creating and maintaining different income streams. 
         </p>
       </div>
 
