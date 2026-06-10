@@ -14,7 +14,7 @@ const Experience: WorkEntry[] = [
   {
     role: 'Systems Software Engieer',
     company: 'NVIDIA Corporation',
-    dates: 'July 2026',
+    dates: 'July 2026 - Present',
     bullets: [
       'RTOS & Hypervisor for Autonomous Applications'
     ],
